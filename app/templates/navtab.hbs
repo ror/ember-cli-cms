@@ -1,0 +1,8 @@
+<div class="row">
+    <ul class="nav nav-tabs">
+      {{#each item in view.categories}}
+          <li role="presentation" {{bind-attr class="active"}} {{action "select" item}}><a href="#">{{item}}</a></li>
+      {{/each}}
+    </ul>
+</div>
+

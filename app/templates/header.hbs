@@ -1,0 +1,58 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="/assets/images/logo.png" alt="OneCoin"></a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right navbar-social-links ">
+                <li>
+                    <div id="languages">
+                        <form action="/" id="changeLanguage"
+                              class="form-horizontal form-inline" method="post" accept-charset="utf-8">
+                            <div class="lang_box_front">
+
+                                <a style="text-decoration: underline;" href="#" onclick="return false;" id="1">
+                                    <img src="/assets/images/us.png">
+                                </a>
+                                /
+                                <a href="#" onclick="return false;" id="2">
+                                    <img src="/assets/images/cn.png">
+                                </a>
+
+                            </div>
+                            <input name="lang_id" value="1" type="hidden">
+                        </form>
+                    </div>
+                </li>
+                <li><a href="/#" id="loginBtn" class="btn btn-primary"
+                       data-target="#loginModal" data-toggle="modal">Login</a>
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right ">
+                <ul class="nav navbar-nav navbar-right" id="frontMenu">
+                    <li><a href="/" class="scroll-item">Home</a></li>
+                    <li><a href="/pages/about">About</a></li>
+                    <li><a href="/pages/opportunity">Opportunity</a></li>
+                    <li><a href="/products">Products</a></li>
+                    <li><a href="/help">Help Center</a></li>
+                    <li><a href="/pages/contact">Contact</a></li>
+                </ul>
+            </ul>
+
+            <!-- /.navbar-collapse -->
+        </div>
+    </div>
+</nav>
+<!-- /.header -->

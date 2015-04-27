@@ -1,0 +1,7 @@
+<h1>Announcements</h1>
+
+<ul>
+  {{#each blog in model}}
+      <li>{{#link-to 'blogs.show' blog}} {{blog.title}} {{/link-to}}</li>
+  {{/each}}
+</ul>

@@ -1,0 +1,32 @@
+<div>
+    <div class="col-md-3">
+        <div class="well sidebar-nav">
+            <strong>Catalog</strong>
+            <ul class="list-group">
+              {{#each item in catalog}}
+                  <li class="list-group-item">{{item}}</li>
+              {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <h1>blog</h1>
+
+        <table>
+            <tbody>
+            <tr>
+                <td>
+                    <strong>{{title}}:</strong>
+                </td>
+                <td>
+                  {{body}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
