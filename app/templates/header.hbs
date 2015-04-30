@@ -36,19 +36,31 @@
                     </div>
                 </li>
                 <li><a href="/#" id="loginBtn" class="btn btn-primary"
-                       data-target="#loginModal" data-toggle="modal">Login</a>
+                       data-target="#loginModal" data-toggle="modal">{{t 'login' }}</a>
                 </li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right ">
-                <ul class="nav navbar-nav navbar-right" id="frontMenu">
-                    <li><a href="/" class="scroll-item">Home</a></li>
-                    <li><a href="/pages/about">About</a></li>
-                    <li><a href="/pages/opportunity">Opportunity</a></li>
-                    <li><a href="/products">Products</a></li>
-                    <li><a href="/help">Help Center</a></li>
-                    <li><a href="/pages/contact">Contact</a></li>
-                </ul>
+            <ul class="nav navbar-nav navbar-right" id="frontMenu">
+                <li><a href="/" class="scroll-item">{{t 'home.title'}}</a></li>
+                <li><a href="/announcement">{{t 'home.announcement'}}</a></li>
+                <li><a href="/manual">{{t 'home.manual'}}</a></li>
+                <li><a href="/news">{{t 'home.news'}}</a></li>
+                <li><a href="/help">{{t 'home.help_center'}}</a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">官网
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/pages/opportunity">{{t 'home.opportunity'}}</a></li>
+                        <li><a href="/products">{{t 'home.products'}}</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/pages/contact">{{t 'home.contact'}}</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/pages/about">{{t 'home.about'}}</a></li>
             </ul>
 
             <!-- /.navbar-collapse -->

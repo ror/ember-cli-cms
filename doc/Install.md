@@ -50,3 +50,14 @@
       $ npm install -g phantomjs
   
 
+# 4. 使用ember-cli-i18n
+
+  参考：https://github.com/dockyard/ember-cli-i18n
+  
+  1> 安装
+  
+    npm install ember-cli-i18n --save-dev
+  
+  2> 使用
+  
+    不能使用保留字，比如：helper,help等作为键名，否则会出错
