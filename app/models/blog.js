@@ -5,9 +5,11 @@ var attr = DS.attr;
 
 var Blog = DS.Model.extend({
   title: attr(),
-  body: attr(),   // 这里的content与系统方法重名，不能用于属性名称
   created_at: attr('date'),
-  updated_at: attr('date')
+  updated_at: attr('date'),
+
+  body: attr(),   // 这里的content与系统方法重名，不能用于属性名称
+  category: attr()
 });
 
 // probably should be mixed-in...
@@ -20,11 +22,11 @@ var Blog = DS.Model.extend({
 //  }.property()
 //});
 
-Blog.reopenClass({
-  FIXTURES: [
-    {id: 1, title: 'Bugs', body: 'Bunny is a good.', created_at: '', updated_at: ''},
-    {id: 2, title: 'Write E', body: 'Coyote is a bad.', created_at: '', updated_at: ''}
-  ]
-});
+//Blog.reopenClass({
+//  FIXTURES: [
+//    {id: 1, title: 'Bugs', body: 'Bunny is a good.', created_at: '', updated_at: '', category: 'news'},
+//    {id: 2, title: 'Write E', body: 'Coyote is a bad.', created_at: '', updated_at: '', category: 'announcement'}
+//  ]
+//});
 
 export default Blog;

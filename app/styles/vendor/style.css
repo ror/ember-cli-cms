@@ -722,8 +722,8 @@ ul.sub-text > li i {
 Navbar "hovernav" dropdown menu - this works only for screen sizes larger than phones.
 The Bootstrap CSS is unchanged. If you don't want this, delete this segment of the CSS
 and delete the corresponding segment of bst.js
-*/
-@media (min-width: 768px) {
+
+@media (min-width: 760px) {
   .navbar-nav .caret {
     display: none;
   }
@@ -734,6 +734,8 @@ and delete the corresponding segment of bst.js
     display: block;
   }
 }
+*/
+
 .input-style input[type="text"] {
 	display: block;
 	width: 100%;

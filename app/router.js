@@ -8,20 +8,16 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.resource('products', function() {});
 
-  this.resource('blogs', {path: '/help'}, function() {
-    this.route('announcement');
-    this.route('manual');
-    this.route('news');
-    this.route('tutorial');
-    this.route('show', {path: '/:blog_id'});
-  });
-
   this.resource('pages', function() {
     this.route('about', {path: '/about'});
     this.route('opportunity', {path: '/opportunity'});
     this.route('contact', {path: '/contact'});
   });
 
+
+  this.resource('blogs', function() {
+    this.route('show', {path: '/:blog_id'})
+  });
 });
 
 export default Router;
