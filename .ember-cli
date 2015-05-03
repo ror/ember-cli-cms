@@ -11,5 +11,6 @@
   */
   "disableAnalytics": true,
   "checkForUpdates" : false,
-  "port" : 4200
+  "port" : 4200,
+  "liveReload" : true
 }

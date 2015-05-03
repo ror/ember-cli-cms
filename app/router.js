@@ -6,17 +6,15 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('products', function() {});
-
   this.resource('pages', function() {
     this.route('about', {path: '/about'});
     this.route('opportunity', {path: '/opportunity'});
     this.route('contact', {path: '/contact'});
+    this.route('products', {path: '/products'});
   });
 
-
-  this.resource('blogs', function() {
-    this.route('show', {path: '/:blog_id'})
+  this.resource('blogs',function() {
+    this.route('show', {path: '/:blog_id'});
   });
 });
 

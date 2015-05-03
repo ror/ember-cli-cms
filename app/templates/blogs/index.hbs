@@ -1,1 +1,8 @@
-help home
+blogs.index  is
+<p>
+    {{link-to 'manual' (query-params category="manual")}}
+</p>
+
+{{#each blog in filteredBlogs}}
+{{blog.title}}
+{{/each}}

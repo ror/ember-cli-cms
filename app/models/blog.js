@@ -6,9 +6,6 @@ var attr = DS.attr;
 var Blog = DS.Model.extend({
   title: attr(),
   created_at: attr('date'),
-  updated_at: attr('date'),
-
-  body: attr(),   // 这里的content与系统方法重名，不能用于属性名称
   category: attr()
 });
 

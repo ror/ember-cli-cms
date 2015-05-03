@@ -42,11 +42,17 @@
 
             <ul class="nav navbar-nav navbar-right" id="frontMenu">
                 <li><a href="/" class="scroll-item">{{t 'home.title'}}</a></li>
-                <li><a href="/announcement">{{t 'home.announcement'}}</a></li>
-                <li><a href="/manual">{{t 'home.manual'}}</a></li>
-                <li><a href="/news">{{t 'home.news'}}</a></li>
-                <li><a href="/help">{{t 'home.help_center'}}</a></li>
 
+                {{#each item in categories}}
+                    {{#if item.is_menu}}
+                        <li>{{#link-to 'blogs.index' (query-params category=item.name) }}
+                            {{t item.name }}
+                        {{/link-to}}
+                        </li>
+                    {{/if}}
+                {{/each}}
+
+                <li><a href="/tools">{{t 'home.tools'}}</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                         {{t 'official.title'}}
@@ -56,7 +62,7 @@
                         <li><a href="http://onecoin.eu/">{{t 'official.home'}}</a></li>
                         <li class="divider"></li>
                         <li><a href="/pages/opportunity">{{t 'official.opportunity'}}</a></li>
-                        <li><a href="/products">{{t 'official.products'}}</a></li>
+                        <li><a href="/pages/products">{{t 'official.products'}}</a></li>
                         <li class="divider"></li>
                         <li><a href="/pages/contact">{{t 'official.contact'}}</a></li>
                         <li><a href="/pages/about">{{t 'official.about'}}</a></li>

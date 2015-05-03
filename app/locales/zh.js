@@ -2,14 +2,15 @@ export default {
   login: '登录',
   signup: '注册',
   about: '关于',
+  announcement: '通告',
+  manual: '秘籍',
+  news: '资讯',
+  tutorial: '教程',
+  blackboard: '开发笔记',
 
   home: {
     title: '主页',
-    announcement: '通告',
-    manual: '秘籍',
-    news: '资讯',
-    tutorial: '教程',
-    help_center: '工具'
+    tools: '工具'
   },
 
   official: {
