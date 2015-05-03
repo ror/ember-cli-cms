@@ -1,8 +1,19 @@
-blogs.index  is
-<p>
-    {{link-to 'manual' (query-params category="manual")}}
-</p>
+<div class="col-md-8 left">
+    <div class="alert alert-warning alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                aria-hidden="true">&times;</span>
+        </button>
+        <strong>特别说明：</strong>
+        {{desc}}
+    </div>
+    {{#each blog in filteredBlogs}}
+        {{render 'blogs/blog' blog}}
+    {{/each}}
+    <div>
+        <!--(will_paginate @blogs, :previous_label => '前一页', :next_label => '后一页').to_s.html_safe-->
+    </div>
+</div><!-- left content -->
 
-{{#each blog in filteredBlogs}}
-{{blog.title}}
-{{/each}}
+<div class="col-md-4 ">
+    <!--partial 'blog/right'-->
+</div><!-- right content -->

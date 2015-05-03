@@ -4,7 +4,7 @@ export default Ember.ArrayController.extend({
     queryParams: ['category'],
     category: null,
 
-    filteredBlogs: function() {
+    filteredBlogs: function () {
         var category = this.get('category');
         var blogs = this.get('model');
 
@@ -13,5 +13,12 @@ export default Ember.ArrayController.extend({
         } else {
             return blogs;
         }
-    }.property('category', 'model')
+    }.property('category', 'model'),
+
+    desc: function () {
+        var txt = "blogs.desc.";
+        txt += this.get('category');
+        return this.t(txt);
+    }.property('category')
+
 });

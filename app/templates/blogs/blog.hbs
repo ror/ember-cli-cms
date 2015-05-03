@@ -1,0 +1,26 @@
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+        {{#link-to 'blogs.show' blog}}【{{t blog.category}}】{{blog.title}}{{/link-to}}
+    </div>
+    <div class="panel-body">
+        <div class="infor_tag">
+            {{blog.cached_tag_list}}
+            <!--<% blog.cached_tags.each do |tag| %>-->
+            <!--<%= link_to "<span>#{tag}</span>".html_safe, url(:blog, :tag, :name => tag), :class => 'tag', :rel => 'tag' %>-->
+            <!--<% end %>-->
+        </div>
+        {{{blog.body.content}}}
+        <!--<%= blog.content.gsub(/<\/?.*?>/, "").truncate(350).html_safe %>-->
+    </div>
+
+    <div class="panel-footer clearfix">
+        <div class="fr">
+            <span class="author">{{model.user.name}}</span>
+            <span class="time">{{model.created_at}}发表</span>
+            <span class="edit">{{blog.content_updated_at}}更新</span>
+            <span class="views" title="浏览次数">{{blog.view_count}}次浏览</span>
+            <!--{ {link-to blog.comments_count.to_s, blog_url(blog), :anchor => 'comments', :class => 'comment', :title => '评论'}}-->
+        </div>
+    </div>
+</div>
