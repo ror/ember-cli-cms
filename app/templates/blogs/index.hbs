@@ -1,4 +1,4 @@
-<div class="col-md-8 left">
+<div class="col-md-9">
     <div class="alert alert-warning alert-dismissible" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                 aria-hidden="true">&times;</span>
@@ -6,6 +6,7 @@
         <strong>特别说明：</strong>
         {{desc}}
     </div>
+
     {{#each blog in filteredBlogs}}
         {{render 'blogs/blog' blog}}
     {{/each}}
@@ -14,6 +15,6 @@
     </div>
 </div><!-- left content -->
 
-<div class="col-md-4 ">
-    <!--partial 'blog/right'-->
+<div class="col-md-3 right">
+  {{render 'blogs/right' blog}}
 </div><!-- right content -->

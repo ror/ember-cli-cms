@@ -13,7 +13,7 @@ var Blog = DS.Model.extend({
   commentable: attr(),
   has_i18n: attr(),
   comments_count: attr(),
-  cached_tag_list:  attr(),
+  cached_tags: attr(),
   category: attr(),
   created_at: attr('date'),
   content_updated_at: attr('date')

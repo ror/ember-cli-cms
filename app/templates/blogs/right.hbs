@@ -1,0 +1,23 @@
+<h3>{{t 'sidebar.winxin.desc'}}</h3>
+<div class="tag">
+    <img {{bind-attr src=imageUrl alt=imageTitle}}>
+</div>
+
+<h3>{{t 'sidebar.hot_blogs'}}</h3>
+<div class="hot_blog">
+    {{#each blog in hot_blogs}}
+      {{#link-to 'blogs.show' blog}}{{blog.title}}{{/link-to}}
+    {{/each}}
+</div>
+
+<h3>{{t 'sidebar.recent_comment'}}</h3>
+<ul class="comment">
+    {{#each comment in comments}}
+    <li>
+        <div>{{comment.brief_content}}...</div>
+      {{comment.account.name}} %>评论了{{#link-to "blogs.index" }}{{comment.blog.title}}{{/link-to}}
+    </li>
+    {{/each}}
+</ul>
+
+
