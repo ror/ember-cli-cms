@@ -1,30 +1,32 @@
-<div>
-    <div class="col-md-3">
-        <div class="well sidebar-nav">
-            <strong>Category</strong>
-            <ul class="list-group">
-                  <li class="list-group-item">{{category}}</li>
-            </ul>
+<div class="col-md-9 left">
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+            {{title}}
+        </div>
+        <div class="panel-body">
+            <div class="tags">
+                {{#each tag in cached_tags}}
+                    {{#link-to "blogs.index" classNames='tag'}}<span>{{tag}}</span>{{/link-to}}
+                {{/each}}
+            </div>
+            <div id="body">
+                {{{body.content}}}
+            </div>
+        </div>
+
+        <div class="panel-footer clearfix">
+            <div class="fr">
+                <span class="author">{{user.name}}</span>
+                <span class="time">{{moment created_at "YYYY-MM-DD"}}发表</span>
+                <span class="edit">{{moment content_updated_at "YYYY-MM-DD"}}更新</span>
+                <span class="views" title="浏览次数">{{view_count}}次浏览</span>
+                <!--{ {link-to blog.comments_count.to_s, blog_url(blog), :anchor => 'comments', :class => 'comment', :title => '评论'}}-->
+            </div>
         </div>
     </div>
+</div><!-- left content -->
 
-    <div class="col-md-9">
-        <h1>blog</h1>
-
-        <table>
-            <tbody>
-            <tr>
-                <td>
-                    <strong>{{title}}:</strong>
-                </td>
-                <td>
-                  {{body}}
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-
+<div class="col-md-3 right">
+    {{render 'blogs/right'}}
+</div><!-- right content -->

@@ -116,6 +116,9 @@ a, a:link {
     }
   }
 }
+.left {
+  margin-top: 20px;
+}
 
 .right {
   background: url('images/x.png') repeat-x scroll 0px -995px #FFF;
@@ -142,5 +145,27 @@ a, a:link {
       display: block;
       margin-bottom: 18px;
     }
+  }
+
+  .comment {
+    word-break: break-all;
+
+    li {
+      border-bottom: 1px dotted #ddd;
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+      .bold{
+        font-weight: bolder;
+      }
+    }
+
+    a {
+      color: #369;
+    }
+  }
+
+  ul {
+    margin-bottom: 20px;
+    list-style: none;
   }
 }

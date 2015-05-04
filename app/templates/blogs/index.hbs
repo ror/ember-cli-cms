@@ -3,15 +3,15 @@
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                 aria-hidden="true">&times;</span>
         </button>
-        <strong>特别说明：</strong>
+        <strong>{{t 'container.title'}}</strong>
         {{desc}}
     </div>
 
-    {{#each blog in filteredBlogs}}
+    {{#each blog in pagedContent}}
         {{render 'blogs/blog' blog}}
     {{/each}}
     <div>
-        <!--(will_paginate @blogs, :previous_label => '前一页', :next_label => '后一页').to_s.html_safe-->
+        {{page-numbers content=pagedContent}}
     </div>
 </div><!-- left content -->
 

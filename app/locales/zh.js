@@ -22,7 +22,9 @@ export default {
     contact: '联系官网'
   },
 
-  blogs: {
+  container: {
+    title: '栏目简介：',
+
     desc: {
       announcement: '为您服务-我们设专人，完全通过人工，将官方英文通告翻译成中文。',
       manual: '帮您赚钱-投资需要智慧，操盘定有技巧，本栏目帮您利益最大化。',
@@ -38,7 +40,8 @@ export default {
       image_title: '扫描二维码加微信公众号'
     },
     hot_blogs: '热门文章',
-    recent_comment: '最新评论'
+    recent_comment: '最新评论',
+    commented: '评论了'
   }
 
 };
