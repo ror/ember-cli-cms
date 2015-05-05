@@ -11,13 +11,13 @@
 </div>
 
 <h3>{{t 'sidebar.recent_comment'}}</h3>
-<ul class="comment">
+<ol class="comment">
     {{#each comment in comments}}
     <li>
         <div>“{{comment.brief_content}}...”</div>
       <span class="bold">{{comment.user}}</span> {{t 'sidebar.commented'}} {{#link-to "blogs.show" comment.blog}}{{comment.blog.title}}{{/link-to}}
     </li>
     {{/each}}
-</ul>
+</ol>
 
 

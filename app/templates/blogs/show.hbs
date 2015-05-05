@@ -2,16 +2,16 @@
     <div class="panel panel-default">
         <!-- Default panel contents -->
         <div class="panel-heading">
-            {{title}}
+          {{title}}
         </div>
         <div class="panel-body">
             <div class="tags">
-                {{#each tag in cached_tags}}
-                    {{#link-to "blogs.index" classNames='tag'}}<span>{{tag}}</span>{{/link-to}}
-                {{/each}}
+              {{#each tag in cached_tags}}
+                {{#link-to "blogs.index" classNames='tag'}}<span>{{tag}}</span>{{/link-to}}
+              {{/each}}
             </div>
             <div id="body">
-                {{{body.content}}}
+              {{{body.content}}}
             </div>
         </div>
 
@@ -25,8 +25,46 @@
             </div>
         </div>
     </div>
+
+    <div class="comment clearfix">
+        <div id="comments">
+            <h2><span>{{comments_count}}</span>条评论</h2>
+            <ul>
+              {{#each item in comments}}
+                {{render 'blogs/comment' item.comment}}
+              {{/each}}
+            </ul>
+        </div>
+      {{#if commentable?}}
+          <a name="comments"></a>
+
+          <div class="relative">
+              <div class="editor_switcher">
+                  <ul>
+                      <li class="current"><a id="publish_comment" href="#">发表评论</a></li>
+                      <li><a id="preview_comment" href="#">预览评论</a></li>
+                  </ul>
+              </div>
+              <!--<% form_for BlogComment.new, url(:blog, :create_comment, :id => @blog.id), :remote => true do |f| %>-->
+              <!--<%= f.text_area :content, :class => 'comment' %>-->
+              <!--<div id="comment-error-info"></div>-->
+              <!--<div id="comment_preview" class="con comment"></div>-->
+              <!--<%= f.submit '', :class => 'comment_btn' %>-->
+              <!--<% end %>-->
+              <!--<div class="box" style="<%= "display:none;" if account_login? %>">-->
+              <!--<button class="close"></button>-->
+              <!--<p>我想知道与谁交流思想，请用微博登录留言。</p>-->
+              <!--<button class="sina_btn"></button>-->
+              <!--</div>-->
+              <!-- box -->
+          </div>
+          <!-- relative -->
+      {{/if}}
+
+    </div>
+    <!-- comment -->
 </div><!-- left content -->
 
 <div class="col-md-3 right">
-    {{render 'blogs/right'}}
+  {{render 'blogs/right'}}
 </div><!-- right content -->

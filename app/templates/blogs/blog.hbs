@@ -20,7 +20,8 @@
             <span class="time">{{moment model.created_at "YYYY-MM-DD"}}发表</span>
             <span class="edit">{{moment blog.content_updated_at "YYYY-MM-DD"}}更新</span>
             <span class="views" title="浏览次数">{{blog.view_count}}次浏览</span>
-            <!--{ {link-to blog.comments_count.to_s, blog_url(blog), :anchor => 'comments', :class => 'comment', :title => '评论'}}-->
+
+            {{#link-to 'blogs.show' blog classNames='comment' anchor = 'comments' title = '评论'}} {{blog.comments_count}} {{/link-to}}
         </div>
     </div>
 </div>

@@ -116,8 +116,63 @@ a, a:link {
     }
   }
 }
+
 .left {
-  margin-top: 20px;
+  margin-top: 40px;
+
+  .comment {
+
+    h2 {
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: 2px solid #DDD;
+      padding-bottom: 3px;
+      margin-bottom: 10px;
+    }
+
+    .user_img {
+      float: left;
+      margin-right: 20px;
+      width: 40px;
+      height: 40px;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+      }
+    }
+
+    .cot_con {
+      float: left;
+
+      .info {
+        padding: 0px;
+        border: medium none;
+        background: none repeat scroll 0% 0% transparent;
+
+        .user_name {
+          font-size: 14px;
+          font-weight: bold;
+        }
+
+        .time {
+          background-position: 0px -303px;
+        }
+      }
+    }
+
+    ul {
+      padding: 0px 0px 0px 20px;
+      list-style: none;
+
+      li {
+        border-bottom: 1px solid #EEE;
+        padding: 15px 0px;
+      }
+    }
+  }
+
 }
 
 .right {
@@ -154,7 +209,7 @@ a, a:link {
       border-bottom: 1px dotted #ddd;
       margin-bottom: 15px;
       padding-bottom: 5px;
-      .bold{
+      .bold {
         font-weight: bolder;
       }
     }
@@ -163,9 +218,9 @@ a, a:link {
       color: #369;
     }
   }
-
-  ul {
-    margin-bottom: 20px;
+  ul, ol {
+    margin: 0;
+    padding: 0;
     list-style: none;
   }
 }
