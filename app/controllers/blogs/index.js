@@ -32,8 +32,13 @@ export default Ember.ArrayController.extend({
     totalPagesBinding: "pagedContent.totalPages",
 
     desc: function () {
-        var txt = "container.desc.";
-        txt += this.get('category');
+        var txt = "blogs.prefix.";
+        if (this.get('category')){
+            txt += this.get('category');
+        } else {
+            txt = "blogs.title";
+        }
+
         return this.t(txt);
     }.property('category')
 
