@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('controller:navtab', {
+moduleFor('controller:tools/team-manager', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });

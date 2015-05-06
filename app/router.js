@@ -16,6 +16,10 @@ Router.map(function() {
   this.resource('blogs',function() {
     this.route('show', {path: '/:blog_id'});
   });
+
+  this.resource('tools', function() {});
+
+  this.route('error', {path: '/:path'});
 });
 
 export default Router;

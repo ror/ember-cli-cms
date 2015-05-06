@@ -1,0 +1,19 @@
+<div class="col-md-9">
+  {{#em-tabs}}
+    {{#em-tab-list}}
+      {{#em-tab}}{{t 'tools.account.title'}}{{/em-tab}}
+      {{#em-tab}}{{t 'tools.team.title'}}{{/em-tab}}
+    {{/em-tab-list}}
+
+    {{#em-tab-panel}}
+      {{render 'tools/account'}}
+    {{/em-tab-panel}}
+    {{#em-tab-panel}}
+      {{render 'tools/team'}}
+    {{/em-tab-panel}}
+  {{/em-tabs}}
+</div><!-- left content -->
+
+<div class="col-md-3 right">
+  {{render 'blogs/right' blog}}
+</div><!-- right content -->
