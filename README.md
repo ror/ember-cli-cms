@@ -51,11 +51,3 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
-## Note
-
-维卡币是比特币的升级版本，第一个由正规公司运作的加密货币。目前处于推广阶段，我们的团队也正在急剧扩张，选择一个好团队，帮您获得更多奖励，
-欢迎加入：
-
-* 微信：onecoinim
-* 链接: [请点击这里] (http://onecoin.eu/signup/onecoinjr)
