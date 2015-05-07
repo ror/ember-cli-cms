@@ -224,3 +224,14 @@ a, a:link {
     list-style: none;
   }
 }
+
+.em-tab-list {
+  //background-color: #f0ad4e;
+  background-color: #337ab7;
+  color: #fff;
+}
+
+.em-tab[active=true] {
+  background-color: white;
+  color: black;
+}
