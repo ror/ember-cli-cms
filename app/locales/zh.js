@@ -35,20 +35,62 @@ export default {
   },
 
   tools: {
-    prefix: '栏目简介：',
-    desc: {
-      account: '这里帮您优化了帐号设置流程。我们不会保存任何信息，在您帮助会员申请注册帐号之后，要提醒他们修改密码，并做好保护。',
-      team: '发展会员的同时，需要很好的摆放点位，帮助您和您的会员利益最大化，这里做了简单的智能模拟优化，仅供参考。'
-    },
+    prefix: '工具简介：',
 
-    account:{
+    account: {
       title: '帐号管理',
-      name: '您的名字',
-      birthday: '您的生日'
+      desc: '这里帮您优化了官网帐号设置申请流程，本页面不会保存任何信息，您要注意自行下载保存和保护。',
+
+      base: {
+        title: '基本信息',
+        name: '姓名',
+        name_placeholder: '您的中文或英文名字',
+        telephone: '电话',
+        telephone_placeholder: '您的手机或座机号码',
+        setting: {
+          title: '设置',
+          capitalize: '首字母大写',
+          uppercase: '字母全部大写'
+        }
+      },
+
+      operation: {
+        title:'操作步骤',
+        first:'1',
+        first_desc: '申请邮箱帐号',
+        second:'2',
+        second_desc: '申请官网帐号',
+        third:'3',
+        third_desc: '申请电子钱包'
+      },
+
+      email: {
+        host: '邮箱类型',
+        url: '注册地址',
+        account: '邮箱帐号',
+        password: '邮箱密码'
+      },
+
+      onecoin: {
+        title: '',
+        url: '注册地址',
+        account: '官网帐号',
+        password: '官网密码'
+      },
+
+      onepay: {
+        title: '',
+        url: '钱包地址',
+        account: '钱包帐号',
+        password: '钱包密码'
+      },
+
+      download: '下载电子文档(PDF格式)'
     },
 
     team: {
-      title: '团队管理'
+      title: '团队管理',
+      desc: '发展会员的同时，需要很好的摆放点位，帮助您和您的会员利益最大化，这里做了简单的智能模拟优化，仅供参考。'
     }
   },
 

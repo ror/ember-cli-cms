@@ -2,38 +2,191 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
             aria-hidden="true">&times;</span>
     </button>
-    <strong>{{t 'tools.prefix'}}</strong> {{t 'tools.desc.account'}}
+    <strong>{{t 'tools.prefix'}}</strong> {{t 'tools.account.desc'}}
 </div>
 
 <div class="panel panel-default ">
     <div class="panel-body">
         <form class="form-horizontal">
-            <div class="form-group">
-                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-
-                <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+            <fieldset>
+                <div class="title">
+                    <label>{{t 'tools.account.base.title'}}</label>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
 
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox"> Remember me
-                        </label>
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">{{t 'tools.account.base.name'}}</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                               id="name" {{bind-attr placeholder=(t 'tools.account.base.name_placeholder')}}>
                     </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="telephone" class="col-sm-2 control-label">{{t 'tools.account.base.telephone'}}</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control"
+                               id="telephone" {{bind-attr placeholder=(t 'tools.account.base.telephone_placeholder')}}>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">{{t 'tools.account.base.setting.title'}}</label>
+
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="radio-inline">
+                            <input type="radio" name="capitalize" value="1" id="capitalize1" checked>{{t 'tools.account.base.setting.capitalize'}}
+                        </div>
+                        <div class="radio-inline">
+                            <input type="radio" name="capitalize" value="2" id="capitalize2">{{t 'tools.account.base.setting.uppercase'}}
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class="title">
+                    <label>{{t 'tools.account.operation.title'}}</label>
+                </div>
+
+                <div class="step">
+                    <label>{{t 'tools.account.operation.first'}}</label>
+                  {{t 'tools.account.operation.first_desc'}}
+                </div>
+
+                <div class="form-group">
+                    <label for="email_host" class="col-sm-2 control-label">{{t 'tools.account.email.host'}}</label>
+
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                            <option>163邮箱</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email_url" class="col-sm-2 control-label">{{t 'tools.account.email.url'}}</label>
+
+                    <div class="col-sm-10">
+                        <p class="form-control-static">
+                            <a href="http://reg.email.163.com/unireg/call.do?cmd=register.entrance&from=163mail_right" target="_blank">http://reg.email.163.com</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email_account" class="col-sm-2 control-label">{{t 'tools.account.email.account'}}</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email_account" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email_password" class="col-sm-2 control-label">{{t 'tools.account.email.password'}}</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="email_password">
+                    </div>
+                </div>
+
+                <div class="step">
+                    <label>{{t 'tools.account.operation.second'}}</label>
+                  {{t 'tools.account.operation.second_desc'}}
+                </div>
+
+                <div class="form-group">
+                    <label for="email_host" class="col-sm-2 control-label">{{t 'tools.account.email.host'}}</label>
+
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                            <option>163邮箱</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="onecoin_url" class="col-sm-2 control-label">{{t 'tools.account.onecoin.url'}}</label>
+
+                    <div class="col-sm-10">
+                        <p class="form-control-static">
+                            <a href="http://onecoin.eu" target="_blank">http://onecoin.eu</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="onecoin_account" class="col-sm-2 control-label">{{t 'tools.account.onecoin.account'}}</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="onecoin_account" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="onecoin_password" class="col-sm-2 control-label">{{t 'tools.account.onecoin.password'}}</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="onecoin_password">
+                    </div>
+                </div>
+
+                <div class="step">
+                    <label>{{t 'tools.account.operation.third'}}</label>
+                  {{t 'tools.account.operation.third_desc'}}
+                </div>
+                <div class="form-group">
+                    <label for="email_host" class="col-sm-2 control-label">{{t 'tools.account.email.host'}}</label>
+
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                            <option>163邮箱</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="onecoin_url" class="col-sm-2 control-label">{{t 'tools.account.onecoin.url'}}</label>
+
+                    <div class="col-sm-10">
+                        <p class="form-control-static">
+                            <a href="http://onecoin.eu" target="_blank">http://onecoin.eu</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="onecoin_account" class="col-sm-2 control-label">{{t 'tools.account.onecoin.account'}}</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="onecoin_account" >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="onecoin_password" class="col-sm-2 control-label">{{t 'tools.account.onecoin.password'}}</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="onecoin_password">
+                    </div>
+                </div>
+            </fieldset>
+
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-default">Sign in</button>
+                    <button type="submit" class="btn btn-primary">{{t 'tools.account.download'}}</button>
                 </div>
             </div>
         </form>
