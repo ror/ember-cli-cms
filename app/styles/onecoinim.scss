@@ -242,6 +242,8 @@ fieldset {
     margin-bottom: 20px;
   }
   .step {
+    color: #d58512;
+
     label {
       margin: 20px 5px 20px 40px;
       width: 20px;
@@ -253,5 +255,22 @@ fieldset {
       font-weight: bolder;
       text-align: center;
     }
+  }
+
+  .email, .signup{
+    width: 25.4%;
+    margin-right: -40px;
+    border-right: 0;
+  }
+
+  .email {
+    margin-right: -30px;
+  }
+
+  .input-group-addon {
+    padding: 0;
+    background-color: inherit;
+    border: 0;
+    border-radius: 0;
   }
 }

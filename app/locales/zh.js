@@ -40,6 +40,7 @@ export default {
     account: {
       title: '帐号管理',
       desc: '这里帮您优化了官网帐号设置申请流程，本页面不会保存任何信息，您要注意自行下载保存和保护。',
+      click_here: '点击这里去注册',
 
       base: {
         title: '基本信息',
@@ -65,21 +66,19 @@ export default {
       },
 
       email: {
-        host: '邮箱类型',
         url: '注册地址',
         account: '邮箱帐号',
         password: '邮箱密码'
       },
 
       onecoin: {
-        title: '',
         url: '注册地址',
         account: '官网帐号',
-        password: '官网密码'
+        password: '官网密码',
+        sponsor: '推荐人帐号'
       },
 
       onepay: {
-        title: '',
         url: '钱包地址',
         account: '钱包帐号',
         password: '钱包密码'

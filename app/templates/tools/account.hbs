@@ -17,16 +17,14 @@
                     <label for="name" class="col-sm-2 control-label">{{t 'tools.account.base.name'}}</label>
 
                     <div class="col-sm-10">
-                        <input type="text" class="form-control"
-                               id="name" {{bind-attr placeholder=(t 'tools.account.base.name_placeholder')}}>
+                      {{input type="text" class="form-control" id="name" placeholder=(t 'tools.account.base.name_placeholder') value=name }}
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="telephone" class="col-sm-2 control-label">{{t 'tools.account.base.telephone'}}</label>
 
                     <div class="col-sm-10">
-                        <input type="text" class="form-control"
-                               id="telephone" {{bind-attr placeholder=(t 'tools.account.base.telephone_placeholder')}}>
+                      {{input type="text" class="form-control" id="telephone" placeholder=(t 'tools.account.base.telephone_placeholder') value=telephone}}
                     </div>
                 </div>
 
@@ -35,10 +33,12 @@
 
                     <div class="col-sm-offset-2 col-sm-10">
                         <div class="radio-inline">
-                            <input type="radio" name="capitalize" value="1" id="capitalize1" checked>{{t 'tools.account.base.setting.capitalize'}}
+                            <input type="radio" name="capitalize" value="1" id="capitalize1"
+                                   checked>{{t 'tools.account.base.setting.capitalize'}}
                         </div>
                         <div class="radio-inline">
-                            <input type="radio" name="capitalize" value="2" id="capitalize2">{{t 'tools.account.base.setting.uppercase'}}
+                            <input type="radio" name="capitalize" value="2"
+                                   id="capitalize2">{{t 'tools.account.base.setting.uppercase'}}
                         </div>
                     </div>
                 </div>
@@ -49,22 +49,34 @@
                     <label>{{t 'tools.account.operation.title'}}</label>
                 </div>
 
+                <!--1. email-->
                 <div class="step">
                     <label>{{t 'tools.account.operation.first'}}</label>
                   {{t 'tools.account.operation.first_desc'}}
                 </div>
 
                 <div class="form-group">
-                    <label for="email_host" class="col-sm-2 control-label">{{t 'tools.account.email.host'}}</label>
+                    <label for="email_account"
+                           class="col-sm-2 control-label">{{t 'tools.account.email.account'}}</label>
+
+                    <div class="col-sm-4 email">
+                        <input type="text" class="form-control" id="email_account" {{bind-attr value=emailAccount}}>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <div class="input-group">
+                            <span class="input-group-addon">@</span>
+                          {{view "select" class="form-control" id="email_host" content=hosts selection=selectedHost}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email_password"
+                           class="col-sm-2 control-label">{{t 'tools.account.email.password'}}</label>
 
                     <div class="col-sm-10">
-                        <select class="form-control">
-                            <option>163邮箱</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+                        <input type="text" class="form-control" id="email_password"  {{bind-attr value=emailPassword}}>
                     </div>
                 </div>
 
@@ -73,113 +85,92 @@
 
                     <div class="col-sm-10">
                         <p class="form-control-static">
-                            <a href="http://reg.email.163.com/unireg/call.do?cmd=register.entrance&from=163mail_right" target="_blank">http://reg.email.163.com</a>
+                            <a href="http://reg.email.163.com/unireg/call.do?cmd=register.entrance&from=163mail_right"
+                               target="_blank">
+                              {{t 'tools.account.click_here'}}
+                            </a>
                         </p>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="email_account" class="col-sm-2 control-label">{{t 'tools.account.email.account'}}</label>
-
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="email_account" >
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="email_password" class="col-sm-2 control-label">{{t 'tools.account.email.password'}}</label>
-
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="email_password">
-                    </div>
-                </div>
-
+                <!--2. onecoin.eu -->
                 <div class="step">
                     <label>{{t 'tools.account.operation.second'}}</label>
                   {{t 'tools.account.operation.second_desc'}}
                 </div>
 
                 <div class="form-group">
-                    <label for="email_host" class="col-sm-2 control-label">{{t 'tools.account.email.host'}}</label>
+                    <label for="onecoin_account"
+                           class="col-sm-2 control-label">{{t 'tools.account.onecoin.account'}}</label>
 
                     <div class="col-sm-10">
-                        <select class="form-control">
-                            <option>163邮箱</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+                        <input type="text" class="form-control" id="onecoin_account" {{bind-attr value=onecoinAccount}}>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="onecoin_password"
+                           class="col-sm-2 control-label">{{t 'tools.account.onecoin.password'}}</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="onecoin_password" {{bind-attr value=onecoinPassword}}>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="onecoin_url" class="col-sm-2 control-label">{{t 'tools.account.onecoin.url'}}</label>
 
-                    <div class="col-sm-10">
+                    <div class="col-sm-4 signup">
+                        <input type="text" class="form-control" value="http://onecoin.eu/signup" id="onecoin_password"
+                               disabled>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <div class="input-group">
+                            <span class="input-group-addon">/</span>
+                            <input type="text" class="form-control" id="sponsor"
+                                   aria-describedby="sponsorStatus" {{bind-attr placeholder=(t 'tools.account.onecoin.sponsor')}}>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
                         <p class="form-control-static">
-                            <a href="http://onecoin.eu" target="_blank">http://onecoin.eu</a>
+                            <a {{bind-attr href=onecoinSignupUrl}} target="_blank" disabled>{{t 'tools.account.click_here'}}</a>
                         </p>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="onecoin_account" class="col-sm-2 control-label">{{t 'tools.account.onecoin.account'}}</label>
-
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="onecoin_account" >
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="onecoin_password" class="col-sm-2 control-label">{{t 'tools.account.onecoin.password'}}</label>
-
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="onecoin_password">
-                    </div>
-                </div>
-
+                <!--3. onepay-->
                 <div class="step">
                     <label>{{t 'tools.account.operation.third'}}</label>
                   {{t 'tools.account.operation.third_desc'}}
                 </div>
+
                 <div class="form-group">
-                    <label for="email_host" class="col-sm-2 control-label">{{t 'tools.account.email.host'}}</label>
+                    <label for="onepay_account"
+                           class="col-sm-2 control-label">{{t 'tools.account.onepay.account'}}</label>
 
                     <div class="col-sm-10">
-                        <select class="form-control">
-                            <option>163邮箱</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                        </select>
+                        <input type="text" class="form-control" id="onepay_account" {{bind-attr value=onepayAccount}}>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="onecoin_url" class="col-sm-2 control-label">{{t 'tools.account.onecoin.url'}}</label>
+                    <label for="onepay_password"
+                           class="col-sm-2 control-label">{{t 'tools.account.onepay.password'}}</label>
+
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="onepay_password"  {{bind-attr value=onepayPassword}}>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="onepay_url" class="col-sm-2 control-label">{{t 'tools.account.onepay.url'}}</label>
 
                     <div class="col-sm-10">
                         <p class="form-control-static">
                             <a href="http://onecoin.eu" target="_blank">http://onecoin.eu</a>
                         </p>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="onecoin_account" class="col-sm-2 control-label">{{t 'tools.account.onecoin.account'}}</label>
-
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="onecoin_account" >
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="onecoin_password" class="col-sm-2 control-label">{{t 'tools.account.onecoin.password'}}</label>
-
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="onecoin_password">
                     </div>
                 </div>
             </fieldset>
