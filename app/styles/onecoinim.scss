@@ -236,7 +236,7 @@ a, a:link {
   color: black;
 }
 
-fieldset {
+fieldset.account {
   .title {
     border-bottom: 1px solid #DDD;
     margin-bottom: 20px;
@@ -258,19 +258,29 @@ fieldset {
   }
 
   .email, .signup{
-    width: 25.4%;
-    margin-right: -40px;
+    width: 21.4%;
+    margin-right: -30px;
     border-right: 0;
   }
 
-  .email {
-    margin-right: -30px;
+  .form-control{
+    padding-right: 0;
   }
 
   .input-group-addon {
-    padding: 0;
+    padding: 2px;
     background-color: inherit;
     border: 0;
     border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  fieldset.account {
+    .email, .signup{
+      width: 56%;
+      margin-right: 0;
+      border-right: 0;
+    }
   }
 }
