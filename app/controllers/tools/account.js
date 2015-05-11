@@ -179,22 +179,25 @@ export default Ember.ObjectController.extend(EmberValidations, {
   }.observes('sponsor', 'isNoSponsor'),
 
   pdf: function () {
-    //return new jsPDF('p','pt','a4');
+    return new jsPDF('p','pt','a4');
   }.property(),
 
   actions: {
     preview: function () {
-      //this.get('pdf').addHTML(document.body, function() {
-      //  var string = this.get('pdf').output('datauristring');
-      //  this.$('#preview-pane').attr('src', string);
-      //});
+      this.get('pdf').addHTML($('#jspdf').get(0), function() {
+        //var string = this.get('pdf').output('datauristring');
+        //$('#preview-pane').attr('src', string);
+        console.log('hello world');
+      });
     },
 
     download: function () {
-      var docDefinition = { content: 'This is an sample PDF printed with pdfMake 你好，我来了' };
-      pdfMake.createPdf(docDefinition).download();
+      // pdfMake --
+      // var docDefinition = { content: 'This is an sample PDF printed with pdfMake 你好，我来了' };
+      //pdfMake.createPdf(docDefinition).download();
 
-      //this.get('pdf').save(this.get('name') + '.pdf');
+      // jsPDF
+      this.get('pdf').save(this.get('name') + '.pdf');
 
       //var doc = new jsPDF();
       //var specialElementHandlers = {
@@ -207,7 +210,7 @@ export default Ember.ObjectController.extend(EmberValidations, {
       //  'width': 170
       //});
       //doc.text(20, 20, 'Hello world.');
-
     }
   }
+
 });
