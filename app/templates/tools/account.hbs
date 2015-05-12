@@ -241,17 +241,9 @@
                 </fieldset>
             </div>
 
-            <iframe id="preview-pane"></iframe>
-
             <div class="form-group">
                 <div class="col-sm-6">
-                    <button class="btn btn-primary" {{action 'preview'}}>
-                      {{t 'tools.account.preview'}}
-                    </button>
-                </div>
-
-                <div class="col-sm-6">
-                    <button class="btn btn-primary" {{action 'download'}}>
+                    <button class="btn btn-primary" {{action 'download'}} disabled>
                       {{t 'tools.account.download'}}
                     </button>
                 </div>

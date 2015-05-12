@@ -51,7 +51,8 @@ export default Ember.ObjectController.extend(EmberValidations, {
       all: [
         {name: this.t('tools.account.base.setting.options_digital.last8'), id: 1},
         {name: this.t('tools.account.base.setting.options_digital.last4'), id: 2},
-        {name: this.t('tools.account.base.setting.options_digital.center'), id: 3}],
+        {name: this.t('tools.account.base.setting.options_digital.center'), id: 3},
+        {name: this.t('tools.account.base.setting.options_digital.random'), id: 4}],
       selected: 1
     };
   }.property(),
@@ -93,24 +94,24 @@ export default Ember.ObjectController.extend(EmberValidations, {
   //数字：中间或最后的4位 用于密码混合
   pinyinDigital: function () {
     var option = this.get('optionsDigital.selected');
-    var letter = '';
+    var digital = '';
 
     switch (option) {
       case 1:
-        letter = this.get('telephone').substr(3, 8);  //末尾8位
+        digital = this.get('telephone').substr(3, 8);  //末尾8位
         break;
       case 2:
-        letter = this.get('telephone').substr(7, 4);//末尾4位
+        digital = this.get('telephone').substr(7, 4);//末尾4位
         break;
       case 3:
-        letter = this.get('telephone').substr(2, 4);//中间4位
+        digital = this.get('telephone').substr(2, 4);//中间4位
         break;
       case 4:
-        letter = Math.random().toString(8);//随机产生
+        digital = Math.floor(Math.random()*1000000+1);//随机产生
         break;
     }
 
-    return letter;
+    return digital;
   }.property('telephone', 'optionsDigital.selected'),
 
   pinyinOfName: function () {
@@ -178,38 +179,22 @@ export default Ember.ObjectController.extend(EmberValidations, {
     }
   }.observes('sponsor', 'isNoSponsor'),
 
-  pdf: function () {
-    return new jsPDF('p','pt','a4');
-  }.property(),
-
   actions: {
-    preview: function () {
-      this.get('pdf').addHTML($('#jspdf').get(0), function() {
-        //var string = this.get('pdf').output('datauristring');
-        //$('#preview-pane').attr('src', string);
-        console.log('hello world');
-      });
-    },
-
     download: function () {
-      // pdfMake --
+      // fixme pdfMake对文本的格式化很好，相当于独立建立了一套doc解析；但无法直接从html生成，姑且放弃。
       // var docDefinition = { content: 'This is an sample PDF printed with pdfMake 你好，我来了' };
       //pdfMake.createPdf(docDefinition).download();
 
-      // jsPDF
-      this.get('pdf').save(this.get('name') + '.pdf');
-
-      //var doc = new jsPDF();
-      //var specialElementHandlers = {
-      //  'body': function(element, renderer){
-      //    return true;
-      //  }
-      //};
-
-      //doc.fromHTML($('#jspdf').get(0), 15, 15, {
-      //  'width': 170
-      //});
-      //doc.text(20, 20, 'Hello world.');
+      // todo jsPDF 通过插件的方式扩展，提供了fromHtml,addHtml（使用第三方获得对encode的支持）方法，但是无法支持encode编码
+      //var doc = new jsPDF('p', 'pt', 'a4');
+      ////var specialElementHandlers = {
+      ////  '.bypass': function (element, renderer) {
+      ////    return true;
+      ////  }
+      ////};
+      //doc.addHTML($('#jspdf')[0]);
+      //var save = doc.save(this.get('name') + '.pdf');
+      //setTimeout("save",5);
     }
   }
 

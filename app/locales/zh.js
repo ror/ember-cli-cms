@@ -63,7 +63,8 @@ export default {
           options_digital: {
             last8: '电话最后八位',
             last4: '电话最后四位',
-            center: '电话中间四位'
+            center: '电话中间四位',
+            random: '随机六位数字'
           }
         }
       },
@@ -104,7 +105,7 @@ export default {
       },
 
       preview: '预览电子文档(PDF格式)',
-      download: '下载保存电子文档(PDF格式)'
+      download: '下载保存电子文档(PDF格式) - Coming soon...'
     },
 
     team: {
