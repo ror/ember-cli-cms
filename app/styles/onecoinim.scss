@@ -1,7 +1,9 @@
 /*
 * for onecoin.im
 */
-
+body{
+  background: #bebebe;
+}
 .fl, .fr {
   display: inline;
   float: left;
@@ -30,6 +32,36 @@ a, a:link {
 
 .alert-dismissable .close, .alert-dismissible .close {
   right: 0;
+}
+
+//home
+.header{ height:160px; background:#4c7298;float:none;}
+.header .wrap{}
+.header .user_img{ float:left; margin:60px 20px 0 0; }
+.header .user_img img{border-left:none; border-radius:50px;-webkit-border-radius:50px;-moz-border-radius:50px;-khtml-border-radius:50px;}
+.header .blog_title{color:#fff; font-weight:bold; font-size: 40px;line-height: 40px; padding-top: 70px;}
+.header .blog_motto{ color:#fff; font-size:18px; font-weight:bold; }
+.header .write{ float:right; color:#fff; text-align:right;}
+.header .write a{color:#fff; margin-left:8px; margin-right:8px; display:inline-block; height:20px; line-height:20px; vertical-align:middle; background:url(y.png) 0px -240px no-repeat; padding-left:16px;}
+.header .write a:hover{background:url(images/y.png) 0px -270px no-repeat; color:#f87b00;}
+.header .write input{ background:none; border:none; color:#fff;background: url(images/y.png) 0px -716px no-repeat; padding-left:20px;}
+.header .write input:hover{ color:#f60;background: url(images/y.png) 0px -746px no-repeat; text-decoration:underline; cursor:pointer;}
+.header .write form{ display:inline;}
+.header .write .admin{background:url(images/y.png) -3px -980px no-repeat;}
+.header .write .admin:hover{background:url(images/y.png) -3px -1010px no-repeat;}
+/*nav*/
+.nav{ font-size:14px; background:url('images/x.png') 0 0 ; height:53px;}
+.nav li{ float:left; }
+.nav a{display:block; font-size:16px; height:46px; width:110px; margin-right:10px; text-align:center; line-height:53px;color:#666;}
+.nav a:hover{ border-bottom:3px solid #69c	; color:#333; text-decoration:none;}
+.nav .current{ border-bottom:3px solid #69c	; color:#333; font-weight:bold;}
+.nav .search{ height:45px; /*background:url(x.png) 0 -60px;*/ padding-top:8px;}
+.nav input{ background:#fff; border:1px #ccc solid; border-right:none; height:30px;  border-radius: 5px 0 0 5px;-webkit-border-radius: 5px 0 0 5px;-moz-border-radius: 5px 0 0 5px;-khtml-border-radius: 5px 0 0 5px; padding:0 10px; height:30px; width:189px; float:left;}
+.nav button{ background:#fff url(images/y.png) 3px 5px no-repeat; border:1px #ccc solid; border-left:none; border-radius:0 5px 5px 0;-webkit-border-radius:0 5px 5px 0;-moz-border-radius:0 5px 5px 0 ;-khtml-border-radius:0 5px 5px 0; padding:0; margin:0; width:30px; height:32px;}
+.nav button:hover{ background:#fff url(images/y.png) 3px -35px no-repeat;}
+
+.notes-content, .tools-content {
+ padding: 70px 20px;
 }
 
 /*
@@ -257,13 +289,13 @@ fieldset.account {
     }
   }
 
-  .email, .signup{
+  .email, .signup {
     width: 21.4%;
     margin-right: -30px;
     border-right: 0;
   }
 
-  .form-control{
+  .form-control {
     padding-right: 0;
   }
 
@@ -277,7 +309,7 @@ fieldset.account {
 
 @media screen and (max-width: 750px) {
   fieldset.account {
-    .email, .signup{
+    .email, .signup {
       width: 56%;
       margin-right: 0;
       border-right: 0;

@@ -36,11 +36,12 @@ app.import({
 //app.import('vendor/pdfmake/build/vfs_fonts.js');
 
 app.import('vendor/trunk8/trunk8.js');
-app.import('vendor/jsPDF/dist/jspdf.min.js');
 app.import({
     development: 'vendor/html2canvas/dist/html2canvas.js',
     production: 'vendor/html2canvas/dist/html2canvas.min.js'
   }
 );
+app.import('vendor/jsPDF/dist/jspdf.min.js');
+
 
 module.exports = app.toTree();
