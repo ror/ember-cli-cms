@@ -33,7 +33,7 @@ module.exports = function(environment) {
       'script-src': "'self' http://localhost:3000 http://localhost:4200", // Allow scripts from https://cdn.mxpnl.com
       'font-src': "'self' http://localhost:3000 http://localhost:4200 data:", // Allow fonts to be loaded from http://fonts.gstatic.com
       'connect-src': "'self' http://localhost:3000 http://localhost:4200 http://custom-api.local  data:", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
-      'img-src': "'self' http://localhost:4200 data:",
+      'img-src': "'self' https://camo.githubusercontent.com data:",
       'style-src': "'self' 'unsafe-inline' http://localhost:3000 http://localhost:4200 ", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
       'media-src': "'self' http://localhost:3000 http://localhost:4200  data:"
     }
