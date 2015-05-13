@@ -119,18 +119,31 @@ a, a:link {
   background: url('images/x.png') 0 0;
   height: 53px;
   a {
-    display: block;
     font-size: 16px;
     height: 48px;
-    margin-right: 10px;
-    text-align: center;
-    line-height: 53px;
+    padding: 15px 20px;
+    text-align: left;
+    line-height: 15px;
     color: #666;
+    &:hover {
+      border-bottom: 3px solid #69c;
+      color: #333;
+      text-decoration: none;
+    }
   }
-  a:hover {
-    border-bottom: 3px solid #69c;
-    color: #333;
-    text-decoration: none;
+
+  //修改 .dropdown-menu li a{}
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: inherit;
+    float: left;
+
+    a {
+      padding: 15px 20px;
+      line-height: 15px;
+    }
   }
 
   .current {
@@ -175,12 +188,6 @@ a, a:link {
 }
 
 //content
-#containerDiv {
-  img {
-    width: 100%;
-  }
-}
-
 .notes-content, .tools-content {
   padding: 70px 20px;
 }
@@ -271,7 +278,7 @@ a, a:link {
 }
 
 .left {
-  margin-top: 40px;
+  margin-top: 30px;
 
   .comment {
 
@@ -435,7 +442,19 @@ fieldset.account {
   }
 }
 
+//fix
+#products, .comment {
+  background-color: #fff;
+  margin-top: 30px;
+}
+
 @media screen and (max-width: 750px) {
+  #containerDiv {
+    img {
+      width: 100%;
+    }
+  }
+
   fieldset.account {
     .email, .signup {
       width: 56%;
@@ -462,7 +481,7 @@ fieldset.account {
     .user_img {
       display: block;
       margin: 10px -10px 0 0;
-      img{
+      img {
         width: 80%;
         height: 80%;
       }
@@ -478,10 +497,6 @@ fieldset.account {
     .write {
       display: none;
     }
-  }
-
-  #frontMenu li:first-child {
-    margin-right: 0;
   }
 
   .menu {
@@ -507,10 +522,10 @@ fieldset.account {
     }
 
     .nav {
-      padding: 0px;
-      height: 200px;
+      padding: 2px 10px;
+      height: auto;
       background-color: #6696c6;
-      width: 110px;
+      width: auto;
       margin-top: 0;
 
       a {
@@ -520,7 +535,7 @@ fieldset.account {
         height: 33px;
         color: #FFFFFF;
         margin-right: 0;
-        &.active{
+        &.active {
           color: #000000;
         }
       }
@@ -607,4 +622,18 @@ fieldset.account {
     //margin-bottom: 50px;
     margin-bottom: 0;
   }
+}
+
+@media screen and (max-width: 450px) {
+  //home
+  .header {
+
+    .user_img {
+      display: none;
+    }
+    .blog_motto {
+      display: none;
+    }
+  }
+
 }

@@ -14,7 +14,7 @@ export default {
   },
 
   official: {
-    title: '官网信息',
+    title: '官网',
     home: '官网主页',
     about: '关于官网',
     opportunity: '创富机会',

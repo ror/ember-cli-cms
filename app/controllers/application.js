@@ -7,9 +7,6 @@ export default Ember.Controller.extend({
 
   //fixme emberjs的数据结构
   menus: function () {
-    //return this.get("categories").map(function(item) {
-    //    if (item.is_menu = true) { return item; }
-    //});
     var menus = [];
     this.get("categories").forEach(function (category) {
       console.log(category);
@@ -23,7 +20,6 @@ export default Ember.Controller.extend({
 
   actions: {
     toggle: function () {
-      console.log("hello");
       $('#containerDiv').toggleClass("moveRight");
       $('#menu').toggleClass("open");
     }
