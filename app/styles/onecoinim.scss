@@ -197,6 +197,8 @@ a, a:link {
 * .con
 */
 .panel-default {
+  border-color: #fff;
+
   //.title
   .panel-heading {
     background-color: #fff;
@@ -443,7 +445,7 @@ fieldset.account {
 }
 
 //fix
-#products, .comment {
+#products, .comment, #pageContent {
   background-color: #fff;
   margin-top: 30px;
 }

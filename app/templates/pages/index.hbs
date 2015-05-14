@@ -1,0 +1,19 @@
+<div class="col-md-9">
+  {{#em-tabs}}
+    {{#em-tab-list}}
+      {{#each page in model}}
+        {{#em-tab}}{{page.slug_url}}{{/em-tab}}
+      {{/each}}
+    {{/em-tab-list}}
+
+    {{#each page in model}}
+      {{#em-tab-panel}}
+        {{render 'pages/about' page}}
+      {{/em-tab-panel}}
+    {{/each}}
+  {{/em-tabs}}
+</div><!-- left content -->
+
+<div class="col-md-3 right">
+  {{render 'blogs/right' blog}}
+</div><!-- right content -->

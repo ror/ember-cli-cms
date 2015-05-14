@@ -9,7 +9,6 @@ export default Ember.Controller.extend({
   menus: function () {
     var menus = [];
     this.get("categories").forEach(function (category) {
-      console.log(category);
       if (category.is_menu = true) {
         menus.push(category);
       }
@@ -19,7 +18,7 @@ export default Ember.Controller.extend({
   }.property('categories'),
 
   actions: {
-    toggle: function () {
+    toggleMobileMenu: function () {
       $('#containerDiv').toggleClass("moveRight");
       $('#menu').toggleClass("open");
     }
