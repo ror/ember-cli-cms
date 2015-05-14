@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'website-onecoin-im',
+    modulePrefix: 'website',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
