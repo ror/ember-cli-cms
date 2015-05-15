@@ -15,6 +15,11 @@
                 <div class="blog_title">ONECOIN.IM</div>
                 <div class="write">
                     登录
+                  <!--{ {#if session.isAuthenticated}}-->
+                      <!--<button { { action 'invalidateSession' }}>Logout</button>-->
+                  <!--{ {else}}-->
+                      <!--<button { { action 'sessionRequiresAuthentication' }}>Login</button>-->
+                  <!--{ {/if}}-->
                 </div>
                 <div class="blog_motto">维卡币操盘手:追踪最新动态，分享投资技巧，提供操盘工具</div>
             </div>
@@ -28,18 +33,18 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav" id="frontMenu">
-                <li><a href="/" class="scroll-item">{{t 'home.title'}}</a></li>
+                <li role="presentation" ><a href="/">{{t 'home.title'}}</a></li>
 
               {{#each item in categories}}
                 {{#if item.is_menu}}
-                    <li>{{#link-to 'blogs.index' (query-params category=item.name) }}
+                    <li role="presentation">{{#link-to 'blogs.index' (query-params category=item.name) }}
                       {{t item.name }}
                     {{/link-to}}
                     </li>
                 {{/if}}
               {{/each}}
 
-                <li><a href="/tools">{{t 'home.tools'}}</a></li>
+                <li role="presentation"><a href="/tools">{{t 'home.tools'}}</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                       {{t 'official.title'}}
@@ -54,7 +59,7 @@
                     </ul>
                 </li>
 
-                <li><a href="/about">{{t 'about'}}</a></li>
+                <li role="presentation"><a href="/about">{{t 'about'}}</a></li>
             </ul>
 
             <!-- /.navbar-collapse -->

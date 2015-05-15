@@ -20,7 +20,11 @@ Router.map(function() {
 
   this.resource('pages', {path: '/about'}, function() {});
 
+  this.route('login');
+  this.route('protected');
+
   this.route('error', {path: '/:path'});
+
 });
 
 export default Router;

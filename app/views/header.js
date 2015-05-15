@@ -5,6 +5,6 @@ export default Ember.View.extend({
 
   toggleWebCurrent: function () {
     console.log("hello menu");
-    this.$('.active').parent().toggleClass('current');
+    this.$('a.active').parent().addClass('current');
   }.on('didInsertElement')
 });
