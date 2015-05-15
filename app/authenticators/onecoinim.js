@@ -31,7 +31,7 @@ export default Base.extend({
    @type String
    @default '/users/sign_in'
    */
-  serverTokenEndpoint: '/users/sign_in',
+  serverTokenEndpoint: '/api/v1/sessions/create',
 
   /**
    The devise resource name

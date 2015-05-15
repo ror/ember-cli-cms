@@ -17,11 +17,11 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
       defaultLocale: 'zh'
-    },
-
-    'simple-auth': {
-      authorizer: 'simple-auth-authorizer:onecoinim'
     }
+  };
+
+  ENV['simple-auth'] = {
+    authorizer: 'simple-auth-authorizer:onecoinim'
   };
 
   if (environment === 'development') {

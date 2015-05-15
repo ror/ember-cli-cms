@@ -14,12 +14,11 @@
                 <div class="user_img"><img src="/assets/images/logo.png" height="80" alt="website icon"></div>
                 <div class="blog_title">ONECOIN.IM</div>
                 <div class="write">
-                    登录
-                  <!--{ {#if session.isAuthenticated}}-->
-                      <!--<button { { action 'invalidateSession' }}>Logout</button>-->
-                  <!--{ {else}}-->
-                      <!--<button { { action 'sessionRequiresAuthentication' }}>Login</button>-->
-                  <!--{ {/if}}-->
+                  {{#if session.isAuthenticated}}
+                      <a {{ action 'invalidateSession' }}>Logout {{session.token}}</a>
+                  {{else}}
+                    {{#link-to 'login'}}Login{{/link-to}}
+                  {{/if}}
                 </div>
                 <div class="blog_motto">维卡币操盘手:追踪最新动态，分享投资技巧，提供操盘工具</div>
             </div>
@@ -33,7 +32,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav" id="frontMenu">
-                <li role="presentation" ><a href="/">{{t 'home.title'}}</a></li>
+                <li role="presentation"><a href="/">{{t 'home.title'}}</a></li>
 
               {{#each item in categories}}
                 {{#if item.is_menu}}
