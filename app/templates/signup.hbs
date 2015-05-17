@@ -1,0 +1,93 @@
+<div class="col-md-9">
+    <div class="panel panel-default ">
+        <div class="panel-heading">
+          {{t 'signup.title'}}
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal" {{action 'register' on='submit'}}>
+
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">{{t 'signup.name'}}</label>
+
+                    <div class="col-sm-10">
+                      {{input id='name' class="form-control" placeholder=(t 'signup.name_placeholder') value=name}}
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="surname" class="col-sm-2 control-label">{{t 'signup.surname'}}</label>
+
+                    <div class="col-sm-10">
+                      {{input id='surname' class="form-control" placeholder=(t 'signup.surname_placeholder') value=surname}}
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">{{t 'signup.email'}}</label>
+
+                    <div class="col-sm-10">
+                      {{input id='email' class="form-control" placeholder=(t 'signup.email_placeholder') value=email}}
+                    </div>
+                    <div class="col-sm-offset-2 col-sm-10 error">
+                        <span class='help-block'>
+                          {{#if hasError}}
+                            {{errors.email}}
+                          {{/if}}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">{{t 'signup.password'}}</label>
+
+                    <div class="col-sm-10">
+                      {{input id='password' class="form-control"  placeholder=(t 'signup.password_placeholder')  type='password' value=password}}
+                    </div>
+
+                    <div class="col-sm-offset-2 col-sm-10 error">
+                        <span class='help-block'>
+                          {{#if hasError}}
+                            {{errors.password}}
+                          {{/if}}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password_confirm"
+                           class="col-sm-2 control-label">{{t 'signup.password_confirmation'}}</label>
+
+                    <div class="col-sm-10">
+                      {{input id='password_confirm' class="form-control"  placeholder=(t 'signup.password_confirmation_placeholder')  type='password' value=password_confirmation}}
+                    </div>
+
+                    <div class="col-sm-offset-2 col-sm-10 error">
+                        <span class='help-block'>
+                          {{#if hasError}}
+                            {{errors.password_confirmation}}
+                          {{/if}}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button id="submit" type="submit" class="btn btn-default">{{t 'signup.title'}}</button>
+                    </div>
+
+                    <div class="col-sm-offset-2 col-sm-10 margin-box">
+                      {{#link-to 'login'}}
+                        {{t 'login.link_to'}}
+                      {{/link-to}}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div><!-- left content -->
+
+<div class="col-md-3 right">
+  {{render 'blogs/right' blog}}
+</div><!-- right content -->

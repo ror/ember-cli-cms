@@ -15,12 +15,12 @@
                 <div class="blog_title">ONECOIN.IM</div>
                 <div class="write">
                   {{#if session.isAuthenticated}}
-                      <a {{ action 'invalidateSession' }}>Logout {{session.token}}</a>
+                      <a {{ action 'invalidateSession' }}>{{t 'logout'}}</a>
                   {{else}}
-                    {{#link-to 'login'}}Login{{/link-to}}
+                    {{#link-to 'login'}}{{t "login.title"}}{{/link-to}}
                   {{/if}}
                 </div>
-                <div class="blog_motto">维卡币操盘手:追踪最新动态，分享投资技巧，提供操盘工具</div>
+                <div class="blog_motto">{{t 'header.motto'}}</div>
             </div>
         </div>
     </div>

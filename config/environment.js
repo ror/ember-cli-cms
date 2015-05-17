@@ -21,7 +21,17 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:onecoinim'
+    authorizer: 'simple-auth-authorizer:devise',
+    store: 'simple-auth-session-store:cookie'
+  };
+
+  ENV['simple-auth-devise'] = {
+    serverTokenEndpoint: '/api/v1/sessions/create'
+  };
+
+  ENV['simple-auth-cookie-store'] = {
+    cookieName: 'im_onecoin',
+    cookieExpirationTime: 600
   };
 
   if (environment === 'development') {

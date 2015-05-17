@@ -1,6 +1,29 @@
 export default {
-  login: '登录',
-  signup: '注册',
+  login: {
+    title: '登录',
+    link_to: '已有帐号，直接登录',
+    username: '用户名',
+    password: '密  码',
+    username_placeholder: '我们用邮箱做您的用户名，请输入',
+    password_placeholder: '请输入密码',
+    remember_me_two_weeks: '保留登录2周'
+  },
+  logout: '退出',
+  signup: {
+    title: '注册',
+    link_to: '还没有帐号？点击这里注册',
+    name: '名字',
+    surname: '姓',
+    email: 'Email',
+    password: '密码',
+    password_confirmation: '确认密码',
+    name_placeholder: '您的名字',
+    surname_placeholder: '您的姓',
+    email_placeholder: '邮箱就是登录帐号，请认真输入',
+    password_placeholder: '输入密码',
+    password_confirmation_placeholder: '请再次输入密码'
+  },
+
   about: '关于',
   announcement: '通告',
   manual: '秘籍',
@@ -11,6 +34,17 @@ export default {
   home: {
     title: '主页',
     tools: '工具'
+  },
+
+  header: {
+    motto: '维卡币操盘手:追踪最新动态，分享投资技巧，提供操盘工具'
+  },
+
+  footer: {
+    about_us: '关于我们',
+    copyright: '2015 © onecoin.im',
+    telephone: '电话咨询',
+    qq_service: 'QQ客服'
   },
 
   official: {
@@ -108,9 +142,14 @@ export default {
       download: '下载保存电子文档(PDF格式) - Coming soon...'
     },
 
-    team: {
+    simulation: {
       title: '模拟点位',
       desc: '发展会员的同时，需要很好的摆放点位，帮助您和您的会员利益最大化，这里做了简单的智能模拟优化，练练手吧。'
+    },
+
+    caculator: {
+      title: '挖矿计算器',
+      desc: '您还在纠结要自动挖矿，还是手动挖矿吗？试试这里的计算器吧。'
     },
 
     promote: {

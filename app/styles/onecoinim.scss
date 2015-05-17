@@ -14,6 +14,16 @@ body {
   float: right;
 }
 
+.error {
+  .help-block {
+    color: #aa1111;
+  }
+}
+
+.margin-box {
+  padding-top: 20px;
+}
+
 a:active, a:hover {
   color: #ff6600;
   text-decoration: underline;
@@ -446,6 +456,13 @@ fieldset.account {
   margin-top: 30px;
 }
 
+.footer {
+  a {
+    color: #fff;
+  }
+}
+
+//移动设备
 @media screen and (max-width: 750px) {
   #containerDiv {
     img {
