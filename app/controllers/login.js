@@ -13,21 +13,24 @@ export default Ember.Controller.extend({
   rememberMe: false,
 
   // change the store's cookie expiration time depending on whether "remember me" is checked or not
-  rememberMeChanged: function() {
+  rememberMeChanged: function () {
     this.get('session.store').cookieExpirationTime = this.get('rememberMe') ? 1209600 : null;
   }.observes('rememberMe'),
 
   actions: {
     //login
-    authenticate: function() {
+    authenticate: function () {
       var _this = this;
       var data = this.getProperties('identification', 'password');
-      this.get('session').authenticate('simple-auth-authenticator:devise', data).then(function () {
-        console.log(_this.get('session').content.toString());
-      },
-        function(message) {
-        _this.set('errorMessage', message);
-      });
+      this.get('session').authenticate('simple-auth-authenticator:devise', data).then(
+        //fixme 将成功信息添加到全局
+        function (message) {
+          _this.set('successMessage', message);
+        },
+
+        function (message) {
+          _this.set('errorMessage', message);
+        });
     }
   }
 });
