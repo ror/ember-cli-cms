@@ -30,8 +30,8 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth-cookie-store'] = {
-    cookieName: 'im_onecoin',
-    cookieExpirationTime: 600
+    cookieName: 'im_onecoin'
+    //, cookieExpirationTime: 600
   };
 
   if (environment === 'development') {
