@@ -24,16 +24,6 @@ body {
   padding-top: 20px;
 }
 
-a:active, a:hover {
-  color: #ff6600;
-  text-decoration: underline;
-}
-
-a, a:link {
-  color: #666;
-  text-decoration: none;
-}
-
 .alert {
   padding: 15px;
   margin: 20px 0;
@@ -651,4 +641,14 @@ fieldset.account {
     }
   }
 
+}
+
+a:active, a:hover {
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+a, a:link {
+  color: #666;
+  text-decoration: none;
 }

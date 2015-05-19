@@ -24,10 +24,11 @@ export default Ember.Controller.extend({
       var data = this.getProperties('identification', 'password');
       this.get('session').authenticate('simple-auth-authenticator:devise', data).then(
         //fixme 将成功信息添加到全局
-        function () {
-          _this.set('successMessage', 'Login success!');
-          console.log('success');
-        },
+        //function () {
+        //  _this.set('successMessage', 'Login success!');
+        //  console.log('success');
+        //},
+        null,
 
         function (message) {
           _this.set('errorMessage', message);
