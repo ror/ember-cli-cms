@@ -22,7 +22,7 @@ export default Ember.Controller.extend({
     authenticate: function () {
       var _this = this;
       var data = this.getProperties('identification', 'password');
-      this.get('session').authenticate('simple-auth-authenticator:devise', data).then(
+      this.get('session').authenticate('simple-auth-authenticator:oauth2-password-grant', data).then(
         //fixme 将成功信息添加到全局
         //function () {
         //  _this.set('successMessage', 'Login success!');

@@ -16,11 +16,10 @@ export default Ember.Controller.extend({
       var data = this.getProperties('name', 'surname', 'email', 'password', 'password_confirmation');
       var user = this.store.createRecord('user', data);
 
-
       user.save().then(
         function () {
           var login = {identification: _this.get('email'), password: _this.get('password')};
-          _this.get('session').authenticate('simple-auth-authenticator:devise', login);
+          _this.get('session').authenticate('simple-auth-authenticator:oauth2-password-grant', login);
           console.log("success"); //todo 应该添加跳转或登录
         },
 

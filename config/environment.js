@@ -21,12 +21,13 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth'] = {
-    authorizer: 'simple-auth-authorizer:devise',
+    authorizer: 'simple-auth-authorizer:oauth2-bearer',
     store: 'simple-auth-session-store:cookie'
   };
 
-  ENV['simple-auth-devise'] = {
-    serverTokenEndpoint: '/api/v1/sessions/create'
+  ENV['simple-auth-oauth2'] = {
+    serverTokenEndpoint: '/api/v1/sessions/create',
+    resourceName: 'user'
   };
 
   ENV['simple-auth-cookie-store'] = {
