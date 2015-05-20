@@ -31,7 +31,7 @@ module.exports = function(environment) {
   };
 
   ENV['simple-auth-cookie-store'] = {
-    cookieName: 'im_onecoin'
+    cookieName: 'rack.session'
     //, cookieExpirationTime: 600
   };
 
