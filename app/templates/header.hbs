@@ -15,7 +15,7 @@
                 <div class="blog_title">ONECOIN.IM</div>
                 <div class="write">
                   {{#if session.isAuthenticated}}
-                      <a {{ action 'invalidateSession' }}>{{t 'logout'}}</a>
+                    {{#link-to 'logout'}}{{t "logout.title"}}{{/link-to}}
                   {{else}}
                     {{#link-to 'login'}}{{t "login.title"}}{{/link-to}}
                   {{/if}}

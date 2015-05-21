@@ -18,13 +18,33 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
       this.get('session').invalidate();
     },
 
-    sessionAuthenticationSucceeded: function() {
+    sessionAuthenticationSucceeded: function () {
       this._super();
       console.log("supper");
     },
 
-    sessionAuthenticationFailed: function(error) {
+    sessionAuthenticationFailed: function (error) {
       this.controllerFor('application').set('loginErrorMessage', error.message);
+    },
+
+    //操作弹出窗口
+    openModal: function (modalName, model) {
+      if(!!model){
+        this.controllerFor(modalName).set('model', model);
+      }
+
+      return this.render(modalName, {
+        into: 'application',
+        outlet: 'modal'
+      });
+    },
+
+    closeModal: function () {
+      return this.disconnectOutlet({
+        outlet: 'modal',
+        parentView: 'application'
+      });
     }
+
   }
 });

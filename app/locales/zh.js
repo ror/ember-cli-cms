@@ -8,7 +8,12 @@ export default {
     password_placeholder: '请输入密码',
     remember_me_two_weeks: '保留登录2周'
   },
-  logout: '退出',
+  logout: {
+    title: '退出',
+    confirm: '您确认要退出吗？',
+    done: '确认',
+    cancel: '取消'
+  },
   signup: {
     title: '注册',
     link_to: '还没有帐号？点击这里注册',
