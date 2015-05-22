@@ -27,14 +27,17 @@
     </div>
 
     <div class="comment clearfix">
-        <div id="comments">
-            <h2><span>{{comments_count}}</span>条评论</h2>
-            <ul>
-              {{#each item in comments}}
-                {{render 'blogs/comment' item.comment}}
-              {{/each}}
-            </ul>
-        </div>
+      {{#if have_comments }}
+          <div id="comments">
+              <h2><span>{{comments_count}}</span>条评论</h2>
+              <ul>
+                {{#each item in comments}}
+                  {{render 'blogs/comment' item.comment}}
+                {{/each}}
+              </ul>
+          </div>
+      {{/if}}
+
       {{#if commentable?}}
           <a name="comments"></a>
 

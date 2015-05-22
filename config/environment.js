@@ -1,6 +1,6 @@
 /* jshint node: true */
 
-module.exports = function(environment) {
+module.exports = function (environment) {
   var ENV = {
     modulePrefix: 'website',
     environment: environment,
@@ -42,6 +42,12 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
+    //方便本地开发调试
+    ENV.adapter = {
+      namespace: 'api/v1',
+      host: 'http://localhost'
+    };
+
     //csp策略 https://github.com/rwjblue/ember-cli-content-security-policy
     ENV.contentSecurityPolicy = {
       'default-src': "'none'",
@@ -69,6 +75,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.adapter = {
+      namespace: 'api/v1'
+    };
+
     ENV['simple-auth'].crossOriginWhitelist = ['http://onecoin.im'];
   }
 
