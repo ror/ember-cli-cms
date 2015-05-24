@@ -190,7 +190,6 @@ body {
 
 /*
 * Blog块
-* .con
 */
 .panel-default {
   border-color: #fff;
@@ -328,6 +327,10 @@ body {
         border-bottom: 1px solid #EEE;
         padding: 15px 0px;
       }
+    }
+
+    .comment-body{
+      height: 160px;
     }
   }
 

@@ -32,8 +32,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav" id="frontMenu">
-                <li role="presentation"><a href="/">{{t 'home.title'}}</a></li>
-
+                <li>{{#link-to 'index'}}{{t 'home.title'}} {{/link-to}}</li>
               {{#each item in categories}}
                 {{#if item.is_menu}}
                     <li role="presentation">{{#link-to 'blogs.index' (query-params category=item.name) }}
@@ -43,17 +42,19 @@
                 {{/if}}
               {{/each}}
 
-                <li role="presentation"><a href="/tools">{{t 'home.tools'}}</a></li>
+                <li>{{#link-to 'tools'}}{{t 'home.tools'}} {{/link-to}}</li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                       {{t 'official.title'}}
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="/official/opportunity">{{t 'official.opportunity'}}</a></li>
-                        <li><a href="/official/products">{{t 'official.products'}}</a></li>
+                        <li>
+                          {{#link-to 'official.opportunity'}} {{t 'official.opportunity'}} {{/link-to}}
+                        </li>
+                        <li>{{#link-to 'official.products'}}{{t 'official.products'}} {{/link-to}}</li>
                         <li class="divider"></li>
-                        <li><a href="/official/about">{{t 'official.about'}}</a></li>
+                        <li>{{#link-to 'official.about'}}{{t 'official.about'}} {{/link-to}}</li>
                         <li><a href="http://onecoin.eu/">{{t 'official.home'}}</a></li>
                     </ul>
                 </li>

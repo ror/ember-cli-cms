@@ -13,7 +13,10 @@ Router.map(function() {
   });
 
   this.resource('blogs',function() {
-    this.route('show', {path: '/:blog_id'});
+    this.route('show', {path: '/:blog_id'}, function () {
+      this.resource('comments');
+    });
+
   });
 
   this.resource('tools', function() {});

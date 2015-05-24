@@ -1,6 +1,23 @@
 import Ember from 'ember';
 /*global $*/
 export default Ember.Controller.extend({
+  //fixme 刷新之后消失
+  currentUser: function () {
+    if (this.get('session.isAuthenticated')){
+      return this.store.find('user', this.get('session.content.secure.account_id')).then(
+        function (user) {
+          return user.data;
+        },
+
+        function () {
+          return null;
+        }
+      );
+    }else{
+      return null;
+    }
+  }.property('session.isAuthenticated'),
+
   categories: function () {
     return this.store.find('category');
   }.property(),

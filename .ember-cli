@@ -8,6 +8,7 @@
     "host" : "0.1.0.1",
     "liveReload" : true,
     "environment" : "mock-development",
+    "live-reload-port": 35729,
   */
   "disableAnalytics": true,
   "checkForUpdates" : false,

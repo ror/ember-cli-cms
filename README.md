@@ -2,7 +2,24 @@
 
 This is a website project powered by Ember.js(ember-cli) and Padrino(Grape).It provides many nice tools to track the <onecoin.eu>'s info, and to help members to make better decisions.
 
-这是一个用Ember.js作为前端框架，Padrino作为后台Api驱动的Web应用。该网站提供了很多好工具用于跟踪维卡比官网最新通告信息，帮助会员作出 更好投资决定。
+这是一个用Ember.js作为前端框架，Padrino作为后台Api驱动的Web应用，可以用作内容管理系统，个人博客。
+
+## Target
+
+To achieve a multi-users, customizable, scalable, strong interactive, easy to use 
+blog system or content management system...
+
+## Feathurs
+
+* Multi users
+* Multi languages (I18n)
+* Multi device (I18n)
+* Client authentication: login/logout, signup...
+* Bootstrap
+* Date format
+* Pinyin translate
+* Text truncation
+* ...
 
 ## Prerequisites
 
@@ -39,10 +56,6 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ### Further Reading / Useful Links
 

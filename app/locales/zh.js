@@ -1,4 +1,24 @@
 export default {
+  about: '关于',
+  announcement: '通告',
+  manual: '秘籍',
+  news: '资讯',
+  tutorial: '教程',
+  blackboard: '开发笔记',
+
+  home: {
+    title: '主页',
+    tools: '工具'
+  },
+
+  button:{
+    submit: "提交",
+    cancel: "取消",
+    delete: "删除",
+    update: "更新",
+    quote: "引用"
+  },
+
   login: {
     title: '登录',
     link_to: '已有帐号，直接登录',
@@ -16,6 +36,7 @@ export default {
   },
   signup: {
     title: '注册',
+    desc: '免费注册，免费使用',
     link_to: '还没有帐号？点击这里注册',
     name: '名字',
     surname: '姓',
@@ -27,18 +48,6 @@ export default {
     email_placeholder: '邮箱就是登录帐号，请认真输入',
     password_placeholder: '输入密码',
     password_confirmation_placeholder: '请再次输入密码'
-  },
-
-  about: '关于',
-  announcement: '通告',
-  manual: '秘籍',
-  news: '资讯',
-  tutorial: '教程',
-  blackboard: '开发笔记',
-
-  home: {
-    title: '主页',
-    tools: '工具'
   },
 
   header: {
@@ -70,6 +79,11 @@ export default {
       news: '翻译官方重要的活动信息，每一次活动，您都不要错过。',
       tutorial: '这里采取网上问答的形式帮您解决具体问题。',
       blackboard: '研究最新web开发技术，积累多平台开发经验。'
+    },
+
+    comment: {
+      title: "添加评论" ,
+      placeholder: "禁止提供色情、暴力和诈骗等违法信息，请注意文明用语"
     }
   },
 
