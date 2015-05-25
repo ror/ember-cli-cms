@@ -14,4 +14,5 @@ export default DS.RESTSerializer.extend({
 
     return this._super(store, type, post_payload, id);
   }
+
 });

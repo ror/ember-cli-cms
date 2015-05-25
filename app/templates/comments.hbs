@@ -1,8 +1,12 @@
 <div class="panel-body">
     <a name="comments"></a>
     <ul>
-      {{#each item in model itemController="comments/comment"}}
+      {{#each item in pagedContent}}
         {{render 'comments/comment' item}}
       {{/each}}
     </ul>
+
+  {{#if showPagedBtm}}
+    {{page-numbers content=pagedContent}}
+  {{/if}}
 </div>
