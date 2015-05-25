@@ -4,10 +4,10 @@ var attr = DS.attr;
 export default DS.Model.extend({
   blog_id: attr(),
   account_id: attr(),
-  content: attr(),
+  body: attr(),
   brief_content: attr(),
   md_content: attr(),
   user: attr(),
-  blog: attr(),
-  created_at: attr()
+  created_at: attr(),
+  blog: DS.belongsTo('blog', {async: true})
 });

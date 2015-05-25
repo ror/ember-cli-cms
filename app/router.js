@@ -14,7 +14,11 @@ Router.map(function() {
 
   this.resource('blogs',function() {
     this.route('show', {path: '/:blog_id'}, function () {
-      this.resource('comments');
+      this.resource('comments', function () {
+        this.route('new');
+        this.route('show', {path: ':content_id'});
+        this.route('edit', {path: ':content_id/edit'});
+      });
     });
 
   });

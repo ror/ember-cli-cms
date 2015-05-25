@@ -1,9 +1,9 @@
-<li class="clearfix" {{bind-attr id=model.id}}>
-    <div class="user_img">{{model.user}}</div>
+<li class="clearfix" {{bind-attr id=id}}>
+    <div class="user_img">{{user}}</div>
     <div class="cot_con">
         <div class="info">
-            <span class="user_name">{{model.user}}</span>
-            <span class="time">{{ago model.created_at}}</span>
+            <span class="user_name">{{user}}</span>
+            <span class="time">{{ago created_at}}</span>
             <!--<% if account_admin? || (account_commenter? && comment.account == current_account) %>-->
             <!--<span><%= link_to '', url(:blog, :comment, :id => comment.id), :method => :delete, :remote => true, :confirm => '要删除评论吗？', :class => 'delete', :title => '删除评论' %></span>-->
             <!--<% end %>-->
@@ -11,6 +11,6 @@
             <!--<span><a href="#" title="引用" class="quote_comment"></a></span>-->
             <!--<% end %>-->
         </div>
-        <div class="comment_content">{{{model.brief_content}}}</div>
+        <div class="comment_content">{{{brief_content}}}</div>
     </div>
 </li>

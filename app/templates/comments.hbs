@@ -1,8 +1,8 @@
 <div class="panel-body">
     <a name="comments"></a>
     <ul>
-      {{#each item in model}}
-        {{render 'comments/comment' item.comment}}
+      {{#each item in model itemController="comments/comment"}}
+        {{render 'comments/comment' item}}
       {{/each}}
     </ul>
 </div>

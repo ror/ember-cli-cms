@@ -1,0 +1,21 @@
+<form {{action 'add' on='submit'}}>
+  {{#if hasError }}
+      <div class="alert alert-warning">
+        {{errorMessage.error}}
+      </div>
+  {{/if}}
+
+    <div class="form-group row">
+        <div class="col-sm-offset-1 col-sm-10">
+            <label for="comment-body" class="control-label">{{t 'blogs.comment.title'}}</label>
+          {{textarea id='comment-body' class="form-control comment-body" placeholder=(t 'blogs.comment.placeholder') value=body}}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-sm-offset-1 col-sm-10">
+            <button id="submit" type="submit" class="btn btn-default">{{t 'button.submit'}}</button>
+        </div>
+    </div>
+</form>
+<!-- form -->

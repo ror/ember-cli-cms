@@ -37,7 +37,9 @@
 
                   {{#if model.commentable}}
                       <div class="col-md-2 fr">
-                          <a id="publish_comment" class="btn btn-primary" {{action "scrollTo" "#add_comment"}}>发表评论</a>
+                          {{#link-to 'comments.new'}}
+                            <button  class="btn btn-primary" {{action "scrollTo" "#add_comment"}}>添加评论</button>
+                          {{/link-to}}
                       </div>
                   {{/if}}
                 </div>
@@ -48,34 +50,14 @@
             <a id="add_comment"></a>
 
           {{#if can_comment}}
-              <form {{action 'add_comment' on='submit'}}>
-                {{#if hasError }}
-                    <div class="alert alert-warning">
-                      {{errorMessage.error}}
-                    </div>
-                {{/if}}
-
-                  <div class="form-group row">
-                      <div class="col-sm-offset-1 col-sm-10">
-                          <label for="comment-body" class="control-label">{{t 'blogs.comment.title'}}</label>
-                        {{textarea id='comment-body' class="form-control comment-body" placeholder=(t 'blogs.comment.placeholder') value=body}}
-                      </div>
-                  </div>
-
-                  <div class="form-group row">
-                      <div class="col-sm-offset-1 col-sm-10">
-                          <button id="submit" type="submit" class="btn btn-default">{{t 'button.submit'}}</button>
-                      </div>
-                  </div>
-              </form>
-              <!-- form -->
-            {{else}}
+            {{outlet "comments-form"}}
+          {{else}}
               <div class="col-sm-offset-2 col-sm-10 margin-box">
                   您还没有登录，
                 {{#link-to 'login'}}
                   {{t 'login.title'}}
                 {{/link-to}}
-                后，才可以添加评论。
+                  后，才可以添加评论。
                 {{#link-to 'signup'}}
                   {{t 'signup.link_to'}}
                 {{/link-to}}
