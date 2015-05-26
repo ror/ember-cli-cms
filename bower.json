@@ -16,9 +16,10 @@
     "ember-i18n": "~3.1.0",
     "ember-cli-moment-shim": "~0.1.0",
     "ember-simple-auth": "0.8.0-beta.2",
-    "flip-counter": "https://github.com/cnanney/css-flip-counter.git"
+    "flip-counter": "https://github.com/cnanney/css-flip-counter.git",
+    "jquery.countdown": "~2.0.4"
   },
   "devDependencies": {
-    "jquery.countdown": "~2.0.4"
+
   }
 }

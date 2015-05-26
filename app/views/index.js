@@ -1,5 +1,5 @@
 import Ember from 'ember';
-// /*global flipCounter */
+///*global flipCounter, request */
 
 export default Ember.View.extend({
   //// fixme
@@ -14,17 +14,31 @@ export default Ember.View.extend({
   //}.on('didInsertElement'),
   //
   //makeCounter: function (myCounter) {
-  //  var _this = this;
-  //  var counterValue = myCounter.getValue();
-  //
-  //  // fixme
-  //  // XMLHttpRequest cannot load https://www.onecoin.eu/tech/other/getJoinedPeople?value=0. No 'Access-Control-Allow-Origin' header
-  //  Ember.$.post('https://www.onecoin.eu/tech/other/getJoinedPeople', {value: counterValue}, function (response) {
-  //    myCounter.setValue(Ember.$.trim(response));
-  //    setTimeout(function () {
-  //      _this.makeCounter(myCounter);
-  //    }, 10000);
-  //  });
+    //var _this = this;
+    //var counterValue = myCounter.getValue();
+
+    // fixme
+    // XMLHttpRequest cannot load https://www.onecoin.eu/tech/other/getJoinedPeople?value=0. No 'Access-Control-Allow-Origin' header
+    //Ember.$.get(
+    //  'https://www.onecoin.eu/tech/other/getJoinedPeople',
+    //  //{value: counterValue},
+    //  function (response) {
+    //    console.log(response);
+    //    myCounter.setValue(Ember.$.trim(response));
+    //    setTimeout(function () {
+    //
+    //      _this.makeCounter(myCounter);
+    //    }, 10000);
+    //  }, "html");
+
+    //request('http://www.google.com', function (error, response, body) {
+    //  if (!error && response.statusCode === 200) {
+    //
+    //    console.log(myCounter); // Show the HTML for the Google homepage.
+    //
+    //    console.log(body); // Show the HTML for the Google homepage.
+    //  }
+    //});
   //}
 
 });
