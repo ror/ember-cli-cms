@@ -20,7 +20,6 @@ Router.map(function() {
         this.route('edit', {path: ':content_id/edit'});
       });
     });
-
   });
 
   this.resource('tools', function() {});

@@ -38,6 +38,12 @@ app.import({
     production: 'vendor/html2canvas/dist/html2canvas.min.js'
   }
 );
-
+app.import({
+    development: 'bower_components/jquery.countdown/dist/jquery.countdown.js',
+    production: 'bower_components/jquery.countdown/dist/jquery.countdown.min.js'
+  }
+);
+app.import('bower_components/flip-counter/js/flipcounter.js');
+app.import('bower_components/flip-counter/css/style.css');
 
 module.exports = app.toTree();
