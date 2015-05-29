@@ -11,7 +11,7 @@ export default {
     tools: '工具'
   },
 
-  button:{
+  button: {
     submit: "提交",
     cancel: "取消",
     delete: "删除",
@@ -82,9 +82,15 @@ export default {
     },
 
     comment: {
-      title: "添加评论" ,
+      title: "添加评论",
       placeholder: "禁止提供色情、暴力和诈骗等违法信息，请注意文明用语"
     }
+  },
+
+  pages: {
+    title: "页面",
+    about: "关于",
+    service: "服务"
   },
 
   tools: {

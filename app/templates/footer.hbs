@@ -11,7 +11,9 @@
 
             <div class="col-md-4  col-xs-6">
                 <ul id="footer-menu" class="pull-right">
-                    <a href="/about">{{t 'footer.about_us'}}</a>
+                  {{#link-to 'pages.index'}}
+                    {{t 'footer.about_us'}}
+                  {{/link-to}}
                 </ul>
             </div>
         </div>

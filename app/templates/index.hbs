@@ -71,7 +71,11 @@
                     </li>
                 </ol>
 
-                <p><a href="/blogs" class="pull-right">详情</a></p>
+                <p>
+                  {{#link-to 'blogs.index' class="pull-right"}}
+                      详情
+                  {{/link-to}}
+                </p>
             </div>
         </div>
     </div>
@@ -106,7 +110,9 @@
                 </ol>
                 <p>您还有什么需要？告诉我们吧，只要具备普遍性，我们就把它提供给您。</p>
 
-                <p><a href="/tools" class="pull-right">详情</a></p>
+              {{#link-to 'tools.index' class="pull-right"}}
+                  详情
+              {{/link-to}}
             </div>
 
             <div class="col-md-6">
@@ -144,7 +150,9 @@
                     </li>
                 </ol>
 
-                <p><a href="/pages/opportunity" class="pull-right">详情</a></p>
+              {{#link-to 'official.opportunity' class="pull-right"}}
+                  详情
+              {{/link-to}}
             </div>
         </div>
     </div>

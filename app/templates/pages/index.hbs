@@ -2,7 +2,7 @@
   {{#em-tabs}}
     {{#em-tab-list}}
       {{#each page in model}}
-        {{#em-tab}}{{page.slug_url}}{{/em-tab}}
+        {{#em-tab}}{{ tab-title page.slug_url }}{{/em-tab}}
       {{/each}}
     {{/em-tab-list}}
 
