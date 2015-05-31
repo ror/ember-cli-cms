@@ -329,7 +329,7 @@ body {
       }
     }
 
-    .comment-body{
+    .comment-body {
       height: 160px;
     }
   }
@@ -481,6 +481,7 @@ fieldset.account {
   .navbar-toggle {
     float: left;
     margin-top: 15px;
+    margin-left: 10px;
   }
 
   .header {
@@ -554,6 +555,33 @@ fieldset.account {
         }
       }
     }
+  }
+  .navbar.navbar-default {
+    background: #BEBEBE;
+    border-bottom: 0;
+  }
+
+  .moveAnimation {
+    -webkit-transition: all 350ms;
+    -ms-transition: all 350ms;
+    -moz-transition: all 350ms;
+    -o-transition: all 350ms;
+    transition: all 350ms;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden
   }
 
   .moveRight {

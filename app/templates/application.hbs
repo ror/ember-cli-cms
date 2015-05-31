@@ -1,10 +1,13 @@
 {{view "header"}}
 
-<div class="container" id="containerDiv">
+<div class="container moveAnimation" id="containerDiv">
     <div class="row">
       {{outlet}}
       {{outlet "modal"}}
     </div>
 </div>
 
-{{view "footer"}}
+<div class="moveAnimation" id="footerDiv">
+  {{view "footer"}}
+</div>
+

@@ -37,6 +37,8 @@ export default Ember.Controller.extend({
   actions: {
     toggleMobileMenu: function () {
       $('#containerDiv').toggleClass("moveRight");
+      $('#headerDiv').toggleClass("moveRight");
+      $('#footerDiv').toggleClass("moveRight");
       $('#menu').toggleClass("open");
     }
   }
