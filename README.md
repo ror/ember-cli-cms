@@ -1,4 +1,6 @@
-# A CMS or Bloger useing Ember.js and Ember-cli, the Demo [onecoin.im](http://onecoin.im)
+# A CMS or Bloger powered by Ember.js and Ember-cli
+
+Demo [onecoin.im](http://onecoin.im)
 
 This is a website project powered by Ember.js(ember-cli) and Padrino(Grape).It provides many nice tools to track the <onecoin.eu>'s info, and to help members to make better decisions.
 
