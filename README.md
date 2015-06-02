@@ -1,6 +1,6 @@
-# A CMS or Bloger powered by Ember.js and Ember-cli
+# A CMS or Blogger powered by Ember.js and Ember-cli
 
-Demo [onecoin.im](http://onecoin.im)
+Demo <http://onecoin.im>
 
 This is a website project powered by Ember.js(ember-cli) and Padrino(Grape).It provides many nice tools to track the <onecoin.eu>'s info, and to help members to make better decisions.
 
@@ -69,5 +69,5 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### License
 
-[The MIT License (MIT)](https://github.com/onecoinim/website.onecoin.im/blob/master/LICENSE)
+[The MIT License (MIT)](https://github.com/onecoinim/ember-cms/blob/master/LICENSE)
 
