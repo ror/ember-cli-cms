@@ -9,9 +9,5 @@ export default Ember.Route.extend({
     if (blog.get('comments_count') > 0){
       this.transitionTo("comments", blog);
     }
-  },
-
-  setupController: function (controller, model) {
-    this._super(controller, model);
   }
 });
