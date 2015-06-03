@@ -44,6 +44,7 @@ app.import({
   }
 );
 app.import('bower_components/flip-counter/js/flipcounter.js');
+app.import('bower_components/flip-counter/js/modernizr.custom.21954.js');
 app.import('bower_components/flip-counter/css/style.css');
 
 module.exports = app.toTree();
