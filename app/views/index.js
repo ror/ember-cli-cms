@@ -8,9 +8,9 @@ export default Ember.View.extend({
   // 1. GET http://localhost/img/frontend/digits.png 404 (Not Found)
   flipCounter: function () {
     //forntend counter
-    if (Ember.$("div#joinedPeople").length > 0) {
+    if (this.$("div#joinedPeople").length > 0) {
       var myCounter = new flipCounter("counter", {pace: 800, auto: false});
-
+      this.$("div#joinedPeople").addClass("hello world");
       this.makeCounter(myCounter);
     }
   }.on('didInsertElement'),
@@ -22,8 +22,8 @@ export default Ember.View.extend({
 
     this.get("controller").store.find("onecoiner", 1).then(
       function (onecoiner) {
-        console.log(onecoiner);
-        myCounter.setValue(10);
+        console.log(onecoiner._data.counter);
+        myCounter.setValue(onecoiner._data.counter);
         setTimeout(function () {
           _this.makeCounter(myCounter);
         }, 10000);
