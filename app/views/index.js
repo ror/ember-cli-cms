@@ -1,58 +1,61 @@
 import Ember from 'ember';
-//import Util from './mixins/util';
-
 /*global flipCounter */
 
 export default Ember.View.extend({
-  //// fixme
-  // 1. GET http://localhost/img/frontend/digits.png 404 (Not Found)
-  flipCounter: function () {
+  initFlipCounter: function () {
     //forntend counter
     if (this.$("div#joinedPeople").length > 0) {
-      var myCounter = new flipCounter("counter", {pace: 800, auto: false});
-      this.$("div#joinedPeople").addClass("hello world");
-      this.makeCounter(myCounter);
+      this.makeCounter(this.flipCounter());
     }
   }.on('didInsertElement'),
 
-  //
+  flipCounter: function () {
+    var myCounter = new flipCounter("counter", {pace: 800, auto: false});
+    return myCounter;
+  },
+
   makeCounter: function (myCounter) {
     var _this = this;
-    //var counterValue = myCounter.getValue();
+    var url = 'http://localhost/api/v1/onecoiners';
+    Ember.$.getJSON(url).then(function (data) {
+      myCounter.setValue(data.counter);
 
-    this.get("controller").store.find("onecoiner", 1).then(
-      function (onecoiner) {
-        console.log(onecoiner._data.counter);
-        myCounter.setValue(onecoiner._data.counter);
-        setTimeout(function () {
+      _this.clock().on('finish.countdown', function () {
+        Ember.run(function () {
           _this.makeCounter(myCounter);
-        }, 10000);
-      },
-      null
-    );
-     //fixme
-     //XMLHttpRequest cannot load https://www.onecoin.eu/tech/other/getJoinedPeople?value=0. No 'Access-Control-Allow-Origin' header
-    //Ember.$.get(
-    //  'https://www.onecoin.eu/tech/other/getJoinedPeople',
-    //  //{value: counterValue},
-    //  function (response) {
-    //    console.log(response);
-    //    myCounter.setValue(Ember.$.trim(response));
-    //    setTimeout(function () {
-    //
-    //      _this.makeCounter(myCounter);
-    //    }, 10000);
-    //  }, "html");
+          _this.clock();
+        });
+      });
+    });
+  },
 
-    //request('http://www.google.com', function (error, response, body) {
-    //  if (!error && response.statusCode === 200) {
-    //
-    //    console.log(myCounter); // Show the HTML for the Google homepage.
-    //
-    //    console.log(body); // Show the HTML for the Google homepage.
-    //  }
-    //});
+  // Turn on Bootstrap
+  //$('[data-toggle="tooltip"]').tooltip();
+
+  // 60s from now!
+  get15dayFromNow: function () {
+    return new Date(new Date().valueOf() + 60 * 1000);
+  },
+
+  clock: function () {
+    var _this = this;
+    return this.$('#clock').countdown(this.get15dayFromNow(), function (event) {
+      _this.$(this).html(event.strftime('%H:%M:%S'));
+    });
+  },
+
+  actions: {
+    update: function () {
+      this.clock().countdown(this.get15dayFromNow());
+    },
+
+    pause: function () {
+      this.clock().countdown('pause');
+    },
+
+    resume: function () {
+      this.clock().countdown('resume');
+    }
   }
-
 
 });
