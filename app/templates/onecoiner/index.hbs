@@ -1,0 +1,41 @@
+<div id="flash_text">
+    <div class="container">
+        <div class="col-md-5 col-md-offset-1"><h3 class="joinedPeople">{{t "onecoiner.already_joined"}}</h3></div>
+        <div class="col-md-5 col-md-offset-1">
+            <button type="button" class="btn btn-primary" id="btn-reset" {{action "view.refresh"}}>
+                <i class="glyphicon glyphicon-repeat"></i>
+                {{t "onecoiner.refresh"}}
+            </button>
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-default" id="btn-pause">
+                    <input type="radio" name="options" id="option2" autocomplete="off">
+                    <i class="glyphicon glyphicon-pause"></i>
+                    {{t "onecoiner.pause"}}
+                </label>
+
+                <label class="btn btn-default active" id="btn-resume">
+                    <input type="radio" name="options" id="option2" autocomplete="off" checked="">
+                    <i class="glyphicon glyphicon-play"></i>
+                    {{t "onecoiner.resume"}}
+                </label>
+            </div>
+        </div>
+        <div id="row">
+            <div class="col-md-8" id="joinedPeople">
+                <ul class="flip-counter default" id="counter"></ul>
+
+                <div class="clear"></div>
+
+                <p class="numPeopleText"></p>
+            </div>
+
+            <div class="col-md-4">
+                <div class="panel panel-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Beautifull, insn't it?">
+                    <div class="panel-body">
+                        <div class="lead" id="clock"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

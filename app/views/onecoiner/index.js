@@ -45,7 +45,7 @@ export default Ember.View.extend({
   },
 
   actions: {
-    update: function () {
+    refresh: function () {
       this.clock().countdown(this.get15dayFromNow());
     },
 

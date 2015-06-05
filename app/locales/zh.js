@@ -191,5 +191,12 @@ export default {
     hot_blogs: '热门文章',
     recent_comment: '最新评论',
     commented: '评论了'
+  },
+
+  onecoiner: {
+    already_joined: "当前加入的人数",
+    refresh: "手动刷新",
+    pause: "暂停计时",
+    resume: "重新开始"
   }
 };
