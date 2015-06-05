@@ -194,7 +194,7 @@ export default {
   },
 
   onecoiner: {
-    already_joined: "当前加入的人数",
+    already_joined: "官网当前会员数:",
     refresh: "手动刷新",
     pause: "暂停计时",
     resume: "重新开始"

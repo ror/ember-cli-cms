@@ -32,6 +32,10 @@ app.import({
   production: 'bower_components/bootstrap/dist/js/bootstrap.min.js'
 });
 
+//app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf', {
+//  destDir: 'fonts'
+//});
+
 app.import('vendor/trunk8/trunk8.js');
 app.import({
     development: 'vendor/html2canvas/dist/html2canvas.js',

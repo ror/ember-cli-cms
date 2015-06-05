@@ -2,9 +2,10 @@ import Ember from 'ember';
 /*global flipCounter */
 
 export default Ember.View.extend({
-  initFlipCounter: function () {
+
+  initOnecoiner: function () {
     //forntend counter
-    if (this.$("div#joinedPeople").length > 0) {
+    if (Ember.$("div#joinedPeople").length > 0) {
       this.makeCounter(this.flipCounter());
     }
   }.on('didInsertElement'),
@@ -20,10 +21,10 @@ export default Ember.View.extend({
     Ember.$.getJSON(url).then(function (data) {
       myCounter.setValue(data.counter);
 
-      _this.clock().on('finish.countdown', function () {
+      _this.initClock().on('finish.countdown', function () {
         Ember.run(function () {
           _this.makeCounter(myCounter);
-          _this.clock();
+          _this.initClock();
         });
       });
     });
@@ -38,15 +39,20 @@ export default Ember.View.extend({
   },
 
   clock: function () {
-    var _this = this;
-    return this.$('#clock').countdown(this.get15dayFromNow(), function (event) {
-      _this.$(this).html(event.strftime('%H:%M:%S'));
+    return Ember.$('#clock');
+  },
+
+  initClock: function () {
+    //var _this = this;
+    return this.clock().countdown(this.get15dayFromNow(), function (event) {
+      Ember.$(this).html(event.strftime('%H:%M:%S'));
     });
   },
 
   actions: {
     refresh: function () {
-      this.clock().countdown(this.get15dayFromNow());
+      this.makeCounter(this.flipCounter());
+      //this.initClock();
     },
 
     pause: function () {
