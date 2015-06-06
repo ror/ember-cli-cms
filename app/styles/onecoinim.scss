@@ -455,6 +455,17 @@ fieldset.account {
   }
 }
 
+.onecoiner {
+  margin-top: 30px;
+  padding: 25px 0px 25px 0px;
+  background-color: #FFFFFF;
+
+  div.flash_btn {
+    padding: 10px 0px 0px 0px;
+    text-align: center;
+  }
+}
+
 //移动设备
 @media screen and (max-width: 750px) {
   #containerDiv {
@@ -658,6 +669,10 @@ fieldset.account {
     //margin-bottom: 50px;
     margin-bottom: 0;
   }
+
+  .onecoiner {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -667,6 +682,7 @@ fieldset.account {
     .user_img {
       display: none;
     }
+
     .blog_motto {
       display: none;
     }

@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import config from '../../config/environment';
 /*global flipCounter */
 
 export default Ember.View.extend({
@@ -17,7 +18,12 @@ export default Ember.View.extend({
 
   makeCounter: function (myCounter) {
     var _this = this;
-    var url = 'http://localhost/api/v1/onecoiners';
+    var url = 'api/v1/onecoiners';
+
+    if (config.adapter.host){
+      url = config.adapter.host + "/" + url;
+    }
+
     Ember.$.getJSON(url).then(function (data) {
       myCounter.setValue(data.counter);
 
