@@ -4,6 +4,17 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
 
+// Put the bootstrap fonts where the bootstrap css expects to find them.
+var pickFiles = require('broccoli-static-compiler');
+var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', {
+  srcDir: '/',
+  destDir: '/assets/bootstrap'
+});
+var mergeTrees = require('broccoli-merge-trees');
+
+var compileSass = require('broccoli-sass');
+var mainCss = compileSass(['app/styles'], 'app.scss', 'assets/dummy.css');
+
 // Use `app.import` to add additional libraries to the generated
 // output files.
 //
@@ -32,10 +43,6 @@ app.import({
   production: 'bower_components/bootstrap/dist/js/bootstrap.min.js'
 });
 
-//app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf', {
-//  destDir: 'fonts'
-//});
-
 app.import('vendor/trunk8/trunk8.js');
 app.import({
     development: 'vendor/html2canvas/dist/html2canvas.js',
@@ -51,4 +58,8 @@ app.import('bower_components/flip-counter/js/flipcounter.js');
 app.import('bower_components/flip-counter/js/modernizr.custom.21954.js');
 app.import('bower_components/flip-counter/css/style.css');
 
-module.exports = app.toTree();
+//module.exports = app.toTree();
+
+module.exports = mergeTrees([app.toTree(), bootstrapFonts, mainCss], {
+  overwrite: true
+});

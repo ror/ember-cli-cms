@@ -45,7 +45,7 @@ module.exports = function (environment) {
     //方便本地开发调试
     ENV.adapter = {
       namespace: 'api/v1',
-      host: 'http://localhost'
+      host: 'http://localhost:8080'
     };
 
     //csp策略 https://github.com/rwjblue/ember-cli-content-security-policy
@@ -53,7 +53,7 @@ module.exports = function (environment) {
       'default-src': "'none'",
       'script-src': "'self' http://localhost:4200", // Allow scripts from https://cdn.mxpnl.com
       'font-src': "'self' http://localhost:4200 data:", // Allow fonts to be loaded from http://fonts.gstatic.com
-      'connect-src': "'self' http://localhost:4200 http://localhost http://192.168.118.130 data:", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
+      'connect-src': "'self' http://localhost:4200 http://localhost:8080 http://192.168.118.130 data:", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
       'img-src': "'self' https://camo.githubusercontent.com data:",
       'style-src': "'self' 'unsafe-inline' http://localhost:4200", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
       'media-src': "'self' http://localhost:4200 data:"
