@@ -7,6 +7,7 @@ module.exports = function (environment) {
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
+			appName: 'backend',
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
@@ -44,8 +45,7 @@ module.exports = function (environment) {
 
     //方便本地开发调试
     ENV.adapter = {
-      namespace: 'api/v1',
-      host: 'http://localhost:8080'
+      namespace: 'api/v1'
     };
 
     //csp策略 https://github.com/rwjblue/ember-cli-content-security-policy

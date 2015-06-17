@@ -3,17 +3,13 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp();
+var pickFiles = require('broccoli-static-compiler');
+var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', {
+	srcDir: '/',
+	destDir: '/assets/bootstrap'
+});
 
-// Put the bootstrap fonts where the bootstrap css expects to find them.
-//var pickFiles = require('broccoli-static-compiler');
-//var bootstrapFonts = pickFiles('bower_components/bootstrap-sass-official/assets/fonts/bootstrap', {
-//  srcDir: '/',
-//  destDir: '/assets/bootstrap'
-//});
-//var mergeTrees = require('broccoli-merge-trees');
-//
-//var compileSass = require('broccoli-sass');
-//var mainCss = compileSass(['app/styles'], 'app.scss', 'assets/dummy.css');
+var mergeTrees = require('broccoli-merge-trees');
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
@@ -27,6 +23,7 @@ var app = new EmberApp();
 // modules that you would like to import into your application
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
+
 app.import({
   development: 'bower_components/bootstrap/dist/css/bootstrap.css',
   production: 'bower_components/bootstrap/dist/css/bootstrap.min.css'
@@ -58,9 +55,6 @@ app.import('bower_components/flip-counter/js/flipcounter.js');
 app.import('bower_components/flip-counter/js/modernizr.custom.21954.js');
 app.import('bower_components/flip-counter/css/style.css');
 
-module.exports = app.toTree();
-
-
-//module.exports = mergeTrees([app.toTree(), bootstrapFonts, mainCss], {
-//  overwrite: true
-//});
+module.exports = mergeTrees([app.toTree(), bootstrapFonts], {
+  overwrite: true
+});

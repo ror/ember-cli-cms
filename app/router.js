@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import MetaRoute from 'ember-cli-admin/dsl/meta-route';
 import config from './config/environment';
 
 var Router = Ember.Router.extend({
@@ -29,8 +30,13 @@ Router.map(function() {
   this.route('login');
   this.route('signup');
   this.route('logout');
+  this.route("dashboard", {path: "/backend"});
 
   this.route('error', {path: '/:path'});
+});
+
+MetaRoute.map(Router, function() {
+	this.resources("users");
 });
 
 export default Router;
