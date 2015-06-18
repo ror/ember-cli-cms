@@ -30,12 +30,12 @@ Router.map(function() {
   this.route('login');
   this.route('signup');
   this.route('logout');
-  this.route("dashboard", {path: "/backend"});
 
   this.route('error', {path: '/:path'});
 });
 
 MetaRoute.map(Router, function() {
+  this.route("dashboard");
 	this.resources("users");
 });
 
