@@ -35,7 +35,7 @@ Router.map(function() {
 });
 
 MetaRoute.map(Router, function() {
-  this.route("dashboard");
+  this.route("dashboard", {path: '/'});
 	this.resources("users");
 });
 

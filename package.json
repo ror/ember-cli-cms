@@ -22,6 +22,7 @@
     "broccoli-asset-rev": "^2.0.2",
     "broccoli-merge-trees": "^0.1.4",
     "broccoli-static-compiler": "^0.1.4",
+    "chance": "^0.7.5",
     "ember-browserify": "^0.6.5",
     "ember-cli": "0.2.5",
     "ember-cli-admin": "0.5.0",
