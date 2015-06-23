@@ -1,1 +1,13 @@
-undefined
+{{view "header"}}
+
+<div class="container moveAnimation" id="containerDiv">
+    <div class="row">
+      {{outlet}}
+      {{outlet "modal"}}
+    </div>
+</div>
+
+<div class="moveAnimation" id="footerDiv">
+  {{view "footer"}}
+</div>
+
