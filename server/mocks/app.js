@@ -4,6 +4,7 @@ var chance = new Chance();
 module.exports = function (app) {
   var express = require('express');
   var appRouter = express.Router();
+
   users = [];
   avatars = [];
   for (i = 0; i < 50; i++) {
@@ -12,9 +13,23 @@ module.exports = function (app) {
       thumb_url: 'http://media-cache-ak0.pinimg.com/236x/0c/e6/7f/0ce67fa7c94da77ab90877e65f3fda87.jpg',
       url: 'http://www.londra.us/Bristol_Castle.jpg'
     });
-    users.push({id: i, name: 'testuser' + i, lat: 50, long: 40, zoom: 3, avatar_id: i, birthdate: new Date()});
+    users.push(
+      {
+        "id": i,
+        "name": "test" + i,
+        "role": "admin",
+        "surname": "",
+        "blogs_count": 2,
+        "provider": null,
+        "comments_count": 9,
+        "profile_url": null,
+        "profile_image_url": null,
+
+        lat: 50, long: 40, zoom: 3, avatar_id: i, birthdate: new Date()
+      });
   }
   users[0].email = 'test@example.com';
+
   appRouter.get('/users', function (req, res) {
     if (req.query.q) {
       return res.send({users: [users[0]], meta: {total: 1}, avatars: [avatars[0]]});
@@ -64,75 +79,47 @@ module.exports = function (app) {
     });
   });
 
-
-  var user_category = {
+  // api/v1/categories
+  var category = {
     id: 1,
-    name: 'test',
-    expired_at: new Date(),
-    zip_code: '123456',
+    name: 'announcement',
+    role: 'test',
     description: chance.paragraph({sentences: 10}),
-    is_created: true,
-    email: 'foo@bar.com',
-    color: '#AFAFAF',
-    avatar_ids: [1, 2]
+    is_menu: true
   };
-  var avs = [{
-    id: 1,
-    position: 2,
-    thumb_url: 'http://placehold.it/100x100',
-    url: 'http://placehold.it/350x150'
-  }, {id: 2, position: 1, thumb_url: 'http://lorempixel.com/100/100/', url: 'http://lorempixel.com/300/200/'}];
-  appRouter.get('/user_categories', function (req, res) {
-    res.send({user_categories: [user_category], avatars: avs});
+
+  appRouter.get('/categories', function (req, res) {
+    res.send({categories: [category]});
   });
 
-  appRouter.post('/user_categories', function (req, res) {
+  appRouter.post('/categories', function (req, res) {
     var errors = {};
-    if (req.body.user_category.email === null) {
+    if (req.body.category.email === null) {
       errors.email = ["can't be blank"];
       return res.status(422).json(errors);
     }
     else {
-      return res.send({user_categories: [user_category], avatars: avs});
+      return res.send({categories: [category]});
     }
   });
-  appRouter.delete('/user_categories/:id', function (req, res) {
+
+  appRouter.delete('/categories/:id', function (req, res) {
     res.send({});
   });
 
-  appRouter.get('/user_categories/:id', function (req, res) {
-    res.send({user_category: user_category, avatars: avs});
+  appRouter.get('/categories/:id', function (req, res) {
+    res.send({category: category, avatars: avs});
   });
 
-  appRouter.put('/user_categories/:id', function (req, res) {
+  appRouter.put('/categories/:id', function (req, res) {
     res.send({
-      user_category: {
+      category: {
         id: req.params.id,
-        name: req.body.user_category.name,
-        expired_at: req.body.user_category.expired_at,
-        zip_code: req.body.user_category.zip_code,
-        description: req.body.user_category.description,
-        is_created: req.body.user_category.is_created,
-        email: req.body.user_category.email,
-        color: req.body.user_category.color
+        name: req.body.category.name,
+        is_menu: req.body.category.is_menu,
+        role: req.body.category.role
       }
     });
-  });
-
-  var comment = {id: 1, title: 'TEST comments'};
-  appRouter.get('/comments', function (req, res) {
-    res.send({comments: [comment]});
-  });
-  appRouter.delete('/comments/:id', function (req, res) {
-    res.send({});
-  });
-
-  appRouter.get('/comments/:id', function (req, res) {
-    res.send({comment: comment});
-  });
-
-  appRouter.put('/comments/:id', function (req, res) {
-    res.send({comment: {id: req.params.id, name: req.body.car.title}});
   });
 
   appRouter.get('/catalogues', function (req, res) {
@@ -171,14 +158,91 @@ module.exports = function (app) {
     });
   });
 
+  // comments
+  var comment = {
+    "id": 1,
+    "blog_id": 1,
+    "account_id": 1,
+    "brief_content": "hello world, this is a content",
+    "md_content": "<p>hello world, this is a content</p>\n",
+    "created_at": new Date(),
+    "user": "admin",
+    "body": "hello world, this is a content"
+  };
+
+  appRouter.get('/comments', function (req, res) {
+    res.send({comments: [comment]});
+  });
+
+  appRouter.delete('/comments/:id', function (req, res) {
+    res.send({});
+  });
+
+  appRouter.get('/comments/:id', function (req, res) {
+    res.send({comment: comment});
+  });
+
+  appRouter.put('/comments/:id', function (req, res) {
+    res.send({comment: {id: req.params.id, name: req.body.car.title}});
+  });
+
   //blogs
+  var blog = {
+    "id": 1,
+    "title": "Hello, this is my first blog.",
+    "slug_url": "first-blog",
+    "view_count": 0,
+    "commentable": true,
+    "has_i18n": null,
+    "comments_count": 1,
+    "cached_tags": ["first"],
+    "content_updated_at": new Date(),
+    "created_at": new Date(),
+    "body": {"content": "Hello, this is my first blog."},
+    "body_en": null,
+    "user": users[0],
+    "category": "announcement",
+    "comments": [1]
+  };
+
   appRouter.get('/blogs', function (req, res) {
     res.send({
-      blog: {
-
-      }
+      blogs: [blog]
     });
   });
 
+  // onecoiners
+  appRouter.get('/onecoiners', function (req, res) {
+    res.send({
+      counter: 10000
+    });
+  });
+
+  var page = {
+    "id": 1,
+    "slug_url": "about",
+    "body": "<p>hello world</p>",
+    "view_count": 0,
+    "updated_at": new Date(),
+    "created_at": new Date(),
+    "user": {
+      "id": 1,
+      "name": "admin",
+      "email": "admin@onecoin.im",
+      "role": "admin",
+      "surname": "",
+      "blogs_count": 2,
+      "provider": null,
+      "comments_count": 9,
+      "profile_url": null,
+      "profile_image_url": null
+    }
+  };
+
+  appRouter.get('/pages', function (req, res) {
+    res.send({
+      page: [page]
+    });
+  });
   app.use('/api/v1', appRouter);
 };
