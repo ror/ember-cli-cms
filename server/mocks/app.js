@@ -211,6 +211,10 @@ module.exports = function (app) {
     });
   });
 
+  appRouter.get('/blogs/:id', function (req, res) {
+    res.send({blog: blog});
+  });
+
   // onecoiners
   appRouter.get('/onecoiners', function (req, res) {
     res.send({
