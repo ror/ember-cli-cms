@@ -51,7 +51,7 @@ module.exports = function (environment) {
     //csp策略 https://github.com/rwjblue/ember-cli-content-security-policy
     ENV.contentSecurityPolicy = {
       'default-src': "'none'",
-      'script-src': "'self' http://localhost:4200", // Allow scripts from https://cdn.mxpnl.com
+      'script-src': "'self' http://localhost:4200 http://localhost:35729", // Allow scripts from https://cdn.mxpnl.com
       'font-src': "'self' http://localhost:4200 data:", // Allow fonts to be loaded from http://fonts.gstatic.com
       'connect-src': "'self' http://localhost:4200 http://localhost:8080 http://192.168.118.130 data:", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
       'img-src': "'self' https://camo.githubusercontent.com data:",

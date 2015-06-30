@@ -34,7 +34,7 @@ Router.map(function() {
   this.route('error', {path: '/:path'});
 });
 
-MetaRoute.map(Router, function() {
+MetaRoute.map(Router, {path: '/admin'}, function() {
   this.route("dashboard", {path: "/"});
   this.resources("users");
 });

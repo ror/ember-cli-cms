@@ -29,17 +29,6 @@ app.import({
   production: 'bower_components/bootstrap/dist/css/bootstrap.min.css'
 });
 
-app.import({
-  development: 'bower_components/bootstrap/dist/css/bootstrap.css.map'
-}, {
-  destDir: 'assets'
-});
-
-app.import({
-  development: 'bower_components/bootstrap/dist/js/bootstrap.js',
-  production: 'bower_components/bootstrap/dist/js/bootstrap.min.js'
-});
-
 //fixme change to addon
 app.import('vendor/trunk8/trunk8.js');
 app.import({
@@ -56,6 +45,4 @@ app.import('bower_components/css-flip-counter/js/flipcounter.js');
 app.import('bower_components/css-flip-counter/js/modernizr.custom.21954.js');
 app.import('bower_components/css-flip-counter/css/style.css');
 
-module.exports = mergeTrees([app.toTree(), bootstrapFonts], {
-  overwrite: true
-});
+module.exports = mergeTrees([app.toTree(), bootstrapFonts]);
